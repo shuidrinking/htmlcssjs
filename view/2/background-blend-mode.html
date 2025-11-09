@@ -1,0 +1,49 @@
+<style>
+.box {
+  width: 300px;
+  height: 300px;
+  background: url("image/business/br.png"), url("image/business/tr.png");
+  background-color: #ff6800;
+  background-blend-mode: difference;
+}
+</style>
+<script type="text/javascript">
+function bbmChange(){
+	document.getElementById("box").style.backgroundBlendMode =
+	document.getElementById("select").selectedOptions[0].innerHTML;
+}
+</script>
+
+<div class="demobox">
+	<div class="onedemo box" id="box">
+		<div style="background-color:#ffffff;position:absolute;bottom:0;">background-blend-mode CSS 属性定义该元素的背景图片，以及背景色如何混合</div>
+	</div>
+	<select id="select" onchange="bbmChange();">
+	  <option>normal</option>
+	  <option>multiply</option>
+	  <option>screen</option>
+	  <option>overlay</option>
+	  <option>darken</option>
+	  <option>lighten</option>
+	  <option>color-dodge</option>
+	  <option>color-burn</option>
+	  <option>hard-light</option>
+	  <option>soft-light</option>
+	  <option selected>difference</option>
+	  <option>exclusion</option>
+	  <option>hue</option>
+	  <option>saturation</option>
+	  <option>color</option>
+	  <option>luminosity</option>
+	</select>
+	<pre class="prettyprint lang-css">
+		/*样例中的样式代码*/
+		.box {
+		  width: 300px;
+		  height: 300px;
+		  background: url("br.png"), url("tr.png");
+		  background-color: #ff6800;
+		  background-blend-mode: screen;
+		}
+	</pre>
+</div>
