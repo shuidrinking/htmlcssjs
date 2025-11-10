@@ -6,39 +6,38 @@
 	display:flex;
 	align-items:center;
 	justify-content:center;
+	gap:30px;
 }
 .avatar{
 	width: 200px;
 	height: 200px;
 	background-color: #5c9fff;
-	margin: 100px auto;
 	border-radius:50%;
 	cursor:pointer;
 	position: relative;
 }
-.avatar:before, .avatar:after {
+.avatar:after {
 	position:absolute;
 	inset:0;
 	content:'';
 	border-radius:50%;
-}
-.avatar:before {
-	background:#00000050;
-}
-.avatar:after {
-	background: inherit;
+	background: #c4f5ff5c;
 	clip-path: circle(0% at 50% 50%);
 }
 .avatar:hover:after {
 	transition: all 0.5s linear;
 	clip-path: circle(50% at 50%50%);
 }
-
+.text{
+	text-align: center;
+	line-height: 200px;
+	color: #ffffff;
+	font-size: 30px;
+}
 .stretch-from-center{
 	width: 200px;
 	height: 200px;
 	background-color: #008b62;
-	margin: 100px auto;
 	border-radius:50%;
 	cursor:pointer;
 	position: relative;
@@ -62,26 +61,28 @@
 }
 </style>
 <div class="containner">
-	<div class="avatar">
+	<div class="stretch-from-center text">
+		方法一
 	</div>
-	<div class="stretch-from-center">
+	<div class="avatar text">
+		方法二
 	</div>
 </div>
 
 >1.css定义
-<pre class="prettyprint lang-s">
+<pre class="prettyprint lang-css">
 .containner{
 	width:100%;
 	display:flex;
 	align-items:center;
 	justify-content:center;
+	gap:30px;
 }
 /*方法一：*/
 .stretch-from-center{
 	width: 200px;
 	height: 200px;
 	background-color: #008b6;
-	margin: 100px auto;
 	border-radius:50%;
 	cursor:pointer;
 	position: relative;
@@ -108,22 +109,16 @@
 	width: 200px;
 	height: 200px;
 	background-color: #5c9fff;
-	margin: 100px auto;
 	border-radius:50%;
 	cursor:pointer;
 	position: relative;
 }
-.avatar:before, .avatar:after {
+.avatar:after {
 	position:absolute;
 	inset:0;
 	content:'';
 	border-radius:50%;
-}
-.avatar:before {
-	background:#00000050;
-}
-.avatar:after {
-	background: inherit;
+	background: #c4f5ff5c;
 	clip-path: circle(0% at 50% 50%);
 }
 .avatar:hover:after {
@@ -133,7 +128,7 @@
 </pre>
 
 >2.html
-<pre class="prettyprint lang-s">
+<pre class="prettyprint lang-html">
 &lt;div class="container"&gt;
 	&lt;div class="avatar"&gt;
 	&lt;/div&gt;

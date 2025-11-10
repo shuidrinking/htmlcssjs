@@ -18,7 +18,7 @@ function init(){
 	menu.expandAllFlag=false;//是否在加载时默认展开所有
 	menu.URLProxy = "loadView";
 	menu.RootNodeId = "0";//设置跟结点
-	menu.openFirstLevelMenus=true;
+	menu.openFirstLevelMenus=false;
 	menu.generateMenu();//勾画菜单树
 }
 /**
@@ -70,24 +70,29 @@ function loadView(menuCode, _element){
 			PR.prettyPrint();
 		}
 		else{
-			let htmlStringParser=new DOMParser();
-			let _newDocument = htmlStringParser.parseFromString(data, "text/html");
-			let _heads=_newDocument.head.children;
-			if(_heads && _heads.length>0){
-				let s = _heads.length ;
-				for(let i=(s-1); i>=0; i--){
-					if(_heads[i].nodeName=="SCRIPT"){
-						let _script=document.createElement("script");
-						_script.type="text/javascript";
-						_script.text=_heads[i].text;
-						containner.appendChild(_script);
-					}
-					else{
-						containner.appendChild(_heads[i]);
+			function appendElements(_nodeArray, _targetParent){
+				if(_nodeArray && _nodeArray.length>0){
+					let s = _nodeArray.length ;
+					for(let i=(s-1); i>=0; i--){
+						if(_nodeArray[i].nodeName=="SCRIPT"){
+							let _script=document.createElement("script");
+							_script.type="text/javascript";
+							_script.text=_nodeArray[i].text;
+							_targetParent.appendChild(_script);
+						}
+						else{
+							_targetParent.appendChild(_nodeArray[i]);
+						}
 					}
 				}
-			}
-			containner.appendChild(_newDocument.body.children[0]);
+			};
+			
+			let htmlStringParser=new DOMParser();
+			let _newDocument = htmlStringParser.parseFromString(data, "text/html");
+			let _headsChilds=_newDocument.head.children;
+			let _bodyChilds = _newDocument.body.children;
+			appendElements(_headsChilds, containner);
+			appendElements(_bodyChilds, containner);
 		}
 		containner.scrollTo({left: 0, top: 0, behavior: "smooth"});
 	});

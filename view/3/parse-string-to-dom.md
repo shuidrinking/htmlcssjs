@@ -9,28 +9,35 @@ parseFromString(input, mimeType)
 //input为html字符串时，函数将返回一个完整的html文档，目标元素位于body中，使用时你需要从body中提取出来
 //样例：
 function laodFromHtmlString(_parentElement, htmlString=""){
-	let htmlStringParser=new DOMParser();
-	let _newDocument = htmlStringParser.parseFromString(htmlString, "text/html");
-	let _heads=_newDocument.head.children;
-	if(_heads && _heads.length>0){
-		let s = _heads.length ;
-		for(let i=(s-1); i>=0; i--){
-			if(_heads[i].nodeName=="SCRIPT"){
-				//对于script必须这样才能load，否则不会被加载
-				let _script=document.createElement("script");
-				_script.type="text/javascript";
-				_script.text=_heads[i].text;
-				containner.appendChild(_script);
-			}
-			else{
-				_parentElement.appendChild(_heads[i]);
+	
+	/*本函数负责将解析后的一组dom元素迁移到目标父元素内*/
+	function appendElements(_nodeArray, _targetParent){
+		if(_nodeArray && _nodeArray.length>0){
+			let s = _nodeArray.length ;
+			for(let i=(s-1); i>=0; i--){
+				if(_nodeArray[i].nodeName=="SCRIPT"){
+					//对于javascript，不能直接append，否则不会被浏览器解析
+					let _script=document.createElement("script");
+					_script.type="text/javascript";
+					_script.text=_nodeArray[i].text;
+					_targetParent.appendChild(_script);
+				}
+				else{
+					_targetParent.appendChild(_nodeArray[i]);
+				}
 			}
 		}
-	}
-	_parentElement.appendChild(_newDocument.body.children[0]);
+	};
+	
+	let htmlStringParser=new DOMParser();
+	let _newDocument = htmlStringParser.parseFromString(data, "text/html");
+	let _headsChilds=_newDocument.head.children;
+	let _bodyChilds = _newDocument.body.children;
+	appendElements(_headsChilds, _parentElement);
+	appendElements(_bodyChilds, _parentElement);
 }
 //特别注意
-如果html字符串中混杂了style、script，则parseFromString返回的结果中会自动将它们置于head中，你需要从生成的_newDocument的head里提取！
+如果html字符串的最前位置是style、script标签，则parseFromString返回的结果中会自动将它们置于head中，如果混在中间，则会被置于body中。
 </pre>
 >2.效果等同于设置innerHTML或调用document.write
 <pre class="prettyprint lang-javascript">
