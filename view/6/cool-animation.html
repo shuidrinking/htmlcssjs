@@ -1,0 +1,80 @@
+<div style="width:100%;height:100%">
+	<div class="ball" data-init="0"></div>
+</div>
+<style>
+	.ball{
+		width:40px;
+		height:40px;
+		border-radius:50%;
+		border-bottom-left-radius: 10px;
+		border-top-left-radius: 10px;
+		/*clip-path:circle(50% at 50% 50%);*/
+		background-color:#008cff;
+		position:absolute;
+		left:0;
+		top:0;
+		z-index:1000;
+		display:none;
+	}
+</style>
+
+<script type="text/javascript">
+	function initball(){
+		let _ball=document.querySelector(".ball");
+		const x = window.innerWidth/2 - _ball.scrollWidth/2;
+		const y = window.innerHeight/2 - _ball.scrollHeight/2;
+		_ball.style.transform=`translate(${x}px, ${y}px)`;
+		_ball.dataset.init="1";
+		_ball.style.display="block";
+	};
+	setTimeout(initball, 200);
+	window.addEventListener("click", (e)=>{
+		let _ball=document.querySelector(".ball");
+		const x=e.clientX - _ball.scrollWidth/2;
+		const y=e.clientY - _ball.scrollHeight/2;
+		move(x, y);
+	});
+	function move(x, y){
+		let _ball=document.querySelector(".ball");
+		const rect = _ball.getBoundingClientRect();
+		const startX = rect.left;
+		const startY = rect.top;
+		const rad=Math.atan2(y-startY, x-startX);//弧度
+		const deg=Math.floor((rad *180)/ Math.PI);//角度
+		_ball.style.width="50px";//拉长，运行后再恢复
+		_ball.getAnimations().forEach((animation)=>{
+			//清理上次添加的动画
+			animation.cancel();
+		});
+		//添加新动画
+		_ball.animate(
+				[
+					{
+						transform:`translate(${startX}px, ${startY}px)`,
+						offset: 0
+					},
+					{
+						transform:`translate(${startX}px, ${startY}px) rotate(${deg}deg) scaleX(1.2)`,
+						offset: 0.2
+					},
+					{
+						transform:`translate(${x}px, ${y}px) rotate(${deg}deg) scaleX(1.5)` ,
+						offset:0.5
+					},
+					{
+						transform:`translate(${x}px, ${y}px) rotate(${deg}deg) scaleX(1.2)` ,
+						offset:0.8
+					},
+					{
+						transform:`translate(${x}px, ${y}px)`,
+						offset:1
+					}
+				], 
+				{
+					duration: 1000,
+					fill:"forwards"
+				}
+		);
+		_ball.style.width="40px";
+	}
+</script>
