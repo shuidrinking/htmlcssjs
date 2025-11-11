@@ -36,7 +36,7 @@ var menuList = [
 	{"menuCode":"mjs012","parentMenuCode":"mjs","showText":"12、Promise.allSettle实现多任务打包","url":"view/3/promise-allsettle.md"},
 	{"menuCode":"mjs013","parentMenuCode":"mjs","showText":"13、找父元素的最简函数","url":"view/3/element-closest.md"},
 	{"menuCode":"mjs014","parentMenuCode":"mjs","showText":"14、遍历对象内的属性","url":"view/3/for-in.md"},
-	{"menuCode":"mjs015","parentMenuCode":"mjs","showText":"15、获取元素的计算后属性","url":"view/3/getComputedStyle.md"},
+	{"menuCode":"mjs015","parentMenuCode":"mjs","showText":"15、获取元素的渲染后属性","url":"view/3/getComputedStyle.md"},
 	{"menuCode":"mimage","parentMenuCode":"0","showText":"四、图片"},
 	{"menuCode":"mfont","parentMenuCode":"0","showText":"五、字体"},
 	{"menuCode":"mworks","parentMenuCode":"0","showText":"六、高频复用件或特效"},

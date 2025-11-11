@@ -17,3 +17,17 @@ let h3 = document.querySelector("h3"),
 result = getComputedStyle(h3, "::after").content;
 console.log(`the generated content is: ${result}`);
 </pre>
+
+>2.获取元素坐标
+<pre class="prettyprint lang-javascript">
+node.getBoundingClientRect()
+返回：
+{
+	x及left:最左边的x
+	y及top:顶部的y
+	bottom:底部的y
+	right:最右边的x
+	width:当前宽度
+	height:当前高度
+}
+</pre>
