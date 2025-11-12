@@ -75,4 +75,5 @@ var menuList = [
 	{"menuCode":"mworks006","parentMenuCode":"mworks","showText":"6、鼠标滑出即消失的弹出框","url":"view/6/notdisplay-on-moveout.html"},
 	{"menuCode":"mworks007","parentMenuCode":"mworks","showText":"7、动画api做的点哪飞哪","url":"view/6/cool-animation.html"},
 	{"menuCode":"mworks008","parentMenuCode":"mworks","showText":"8、高亮标记被选中的文字","url":"view/6/highlight-selected.html"},
+	{"menuCode":"mworks009","parentMenuCode":"mworks","showText":"9、蜂巢展示","url":"view/6/honeycomb-rows.html"},
 ];

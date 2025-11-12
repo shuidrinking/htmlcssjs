@@ -16,11 +16,18 @@ function laodFromHtmlString(_parentElement, htmlString=""){
 			let s = _nodeArray.length ;
 			for(let i=(s-1); i>=0; i--){
 				if(_nodeArray[i].nodeName=="SCRIPT"){
-					//对于javascript，不能直接append，否则不会被浏览器解析
 					let _script=document.createElement("script");
 					_script.type="text/javascript";
-					_script.text=_nodeArray[i].text;
+					if(_nodeArray[i].text){_script.text=_nodeArray[i].text;}
+					if(_nodeArray[i].src){_script.src=_nodeArray[i].src;}
 					_targetParent.appendChild(_script);
+				}
+				else if(_nodeArray[i].nodeName=="LINK"){
+					let _link=document.createElement("link");
+					_link.type="text/css";
+					_link.href=_nodeArray[i].href;
+					_link.rel=_nodeArray[i].rel;
+					_targetParent.appendChild(_link);
 				}
 				else{
 					_targetParent.appendChild(_nodeArray[i]);

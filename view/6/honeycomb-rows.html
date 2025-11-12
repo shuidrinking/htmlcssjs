@@ -1,0 +1,64 @@
+<script type="text/javascript">
+	function decorateHoneycombCell(item){
+		//为每个六边形设置颜色，使整体更花里胡哨，本段代码对整体布局功能没任何用处
+		let cellStyleArray = [
+			{bgColor : "#ff8700", iconHtml : "&#xe97f;"},
+			{bgColor : "#049340", iconHtml : "&#xe92e;"},
+			{bgColor : "#046893", iconHtml : "&#xe993;"},
+			{bgColor : "#1ea0ff", iconHtml : "&#xea58;"},
+			{bgColor : "#b66800", iconHtml : "&#xeae0;"},
+			{bgColor : "#b64200", iconHtml : "&#xe958;"},
+			{bgColor : "#b60048", iconHtml : "&#xe94a;"},
+			{bgColor : "#7500b6", iconHtml : "&#xe97e;"},
+			{bgColor : "#00b66a", iconHtml : "&#xe926;"},
+			{bgColor : "#ff7250", iconHtml : "&#xe98b;"},
+			{bgColor : "#0bafb4", iconHtml : "&#xe99f;"},
+		];
+		let randomNum1 = Math.floor(Math.random()*11);
+		let randomNum2 = Math.floor(Math.random()*11);
+		item.style.backgroundColor=cellStyleArray[randomNum1].bgColor;
+		item.innerHTML=cellStyleArray[randomNum2].iconHtml;
+	}
+	function initHoneycomb(){
+		console.info(123123);
+		SDHoneycomb.render(null, decorateHoneycombCell);
+	}
+	setTimeout(initHoneycomb, 1000);
+</script>
+<div style="overflow:hidden;padding:30px;">
+	<div class="sd-honeycomb-row-display">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="sd-honeycomb-row-display">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="sd-honeycomb-row-display">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="sd-honeycomb-row-display">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="sd-honeycomb-row-display">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+<link type="text/css" rel="stylesheet" href="css/SDHoneycomb.css"/>
+<script type="text/javascript" src="javascript/components/SDHoneycomb.js"></script>

@@ -22,12 +22,6 @@ function init(){
 	menu.generateMenu();//勾画菜单树
 }
 /**
- * iframe onload事件调整大小
- */
-function reSize(){
-	
-}
-/**
  * 点击菜单后在iframe中加载目标页面
  * @returns
  */
@@ -39,7 +33,10 @@ function loadView(menuCode, _element){
 	else{
 		return;
 	}
-	
+	if(url.startsWith("http")){
+		window.open(url);
+		return;
+	}
 	/* var currentMenu=menuMap[menuCode];
 	var positionHTMLString=currentMenu.showText;
 	while(true){
@@ -77,8 +74,16 @@ function loadView(menuCode, _element){
 						if(_nodeArray[i].nodeName=="SCRIPT"){
 							let _script=document.createElement("script");
 							_script.type="text/javascript";
-							_script.text=_nodeArray[i].text;
+							if(_nodeArray[i].text){_script.text=_nodeArray[i].text;}
+							if(_nodeArray[i].src){_script.src=_nodeArray[i].src;}
 							_targetParent.appendChild(_script);
+						}
+						else if(_nodeArray[i].nodeName=="LINK"){
+							let _link=document.createElement("link");
+							_link.type="text/css";
+							_link.href=_nodeArray[i].href;
+							_link.rel=_nodeArray[i].rel;
+							_targetParent.appendChild(_link);
 						}
 						else{
 							_targetParent.appendChild(_nodeArray[i]);
