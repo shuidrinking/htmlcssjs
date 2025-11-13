@@ -76,4 +76,6 @@ var menuList = [
 	{"menuCode":"mworks007","parentMenuCode":"mworks","showText":"7、动画api做的点哪飞哪","url":"view/6/cool-animation.html"},
 	{"menuCode":"mworks008","parentMenuCode":"mworks","showText":"8、高亮标记被选中的文字","url":"view/6/highlight-selected.html"},
 	{"menuCode":"mworks009","parentMenuCode":"mworks","showText":"9、蜂巢展示","url":"view/6/honeycomb-rows.html"},
+	{"menuCode":"mworks010","parentMenuCode":"mworks","showText":"10、鼠标划过时自动上浮说明","url":"view/6/showtip-onhover.md"},
+	{"menuCode":"mworks011","parentMenuCode":"mworks","showText":"11、列队点播式图片播放器","url":"view/6/carousel-image-player.html"},
 ];

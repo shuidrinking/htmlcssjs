@@ -23,41 +23,58 @@
 		console.info(123123);
 		SDHoneycomb.render(null, decorateHoneycombCell);
 	}
-	setTimeout(initHoneycomb, 1000);
+	setTimeout(initHoneycomb, 200);
 </script>
-<div style="overflow:hidden;padding:30px;">
-	<div class="sd-honeycomb-row-display">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<div class="sd-honeycomb-row-display">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<div class="sd-honeycomb-row-display">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<div class="sd-honeycomb-row-display">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<div class="sd-honeycomb-row-display">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+<pre class="prettyprint lang-html">
+该组件为edk4j内置组件，用法：
+1、蜂巢样式说明： 
+	sd-honeycomb-row-display此时六边形一个顶点在顶端，设置此class的div中横向放置一行六边形，蜂巢由多行构成；
+	sd-honeycomb-column-display此时六边形水平边在顶端，设置此class的div中纵向放置一列六边形，蜂巢由多列构成；
+2、引入样式和脚本
+	&lt;link type="text/css" rel="stylesheet" href="SDHoneycomb.css"/&gt;
+	&lt;script type="text/javascript" src="SDHoneycomb.js"&gt;&lt;/script&gt;
+3、网页中按需要添加蜂巢元素
+	&lt;div class="sd-honeycomb-row-display或者sd-honeycomb-column-display"&gt;
+	&lt;div&gt;每个div作为蜂巢六边形单元格&lt;/div&gt;
+	&lt;/div&gt;
+3、网页加载时调用蜂巢初始化函数：
+	SDHoneycomb.render(null或者自定义编写的六边形class, ()=>{自定义渲染六边形的函数，可以用于设置六边形中的内容以及六边形的样式});
+</pre>
+<div class="demobox">
+	<div style="overflow:hidden;padding:30px;">
+		<div class="sd-honeycomb-row-display">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="sd-honeycomb-row-display">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="sd-honeycomb-row-display">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="sd-honeycomb-row-display">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="sd-honeycomb-row-display">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 	</div>
 </div>
 <link type="text/css" rel="stylesheet" href="css/SDHoneycomb.css"/>

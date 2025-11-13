@@ -1,0 +1,38 @@
+<script type="text/javascript">
+	function initImagePlayer(){
+		let ply=new SDImagePlayer();
+		ply.build(document.querySelector(".sd-carousel-player"));
+	}
+	setTimeout(initImagePlayer, 200);
+</script>
+
+<pre class="prettyprint lang-javascript">
+该组件为edk4j内置组件，用法：
+1、引入样式和脚本
+	&lt;link type="text/css" rel="stylesheet" href="sd-carousel-image-player.css"/&gt;
+	&lt;script type="text/javascript" src="SDCarouseImagePlayer.js"&gt;&lt;/script&gt;
+2、编辑图片播放器元素
+	&lt;div class="sd-carousel-player"&gt;
+		&lt;img src="url1"&gt;
+		...
+		&lt;img src="urln"&gt;
+	&lt;/div&gt;
+3、页面加载后调用初始化播放器的函数
+	function initImagePlayer(){
+		let ply=new SDImagePlayer();
+		ply.build(document.querySelector(".sd-carousel-player"));
+	}
+</pre>
+
+<div class="demobox">
+	<div class="sd-carousel-player">
+		<img src="image/business/imgplayer/1.jpg">
+		<img src="image/business/imgplayer/3.jpg">
+		<img src="image/business/imgplayer/4.jpg">
+		<img src="image/business/imgplayer/6.jpg">
+		<img src="image/business/imgplayer/7.jpg">
+		<img src="image/business/imgplayer/8.jpg">
+	</div>
+</div>
+<link type="text/css" rel="stylesheet" href="css/sd-carousel-image-player.css"/>
+<script type="text/javascript" src="javascript/components/SDCarouseImagePlayer.js"></script>

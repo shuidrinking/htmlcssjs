@@ -1,0 +1,40 @@
+/*SDCarouseImagePlayer.js组件的配套样式*/
+.sd-carousel-player{
+		position:relative;
+		width:10rem;
+		height:4rem;
+		overflow:hidden;
+		perspective: 20rem;/*观察者透视距离*/
+	}
+	.sd-carousel-player>img, .sd-carousel-image{
+		cursor: pointer;
+		position:absolute;
+		display:inline-block;
+		max-width:6rem;
+		height:100%;
+		left:calc(50% - 4rem);
+		top:0;
+		user-select:none;
+		transition:0.5s;
+		transform-style: preserve-3d;/*定位在三维空间内*/
+	}
+	.sd-carousel-pre-button{
+		left:0.1rem;
+		clip-path: polygon(100% 0%, 60% 50%, 100% 100%, 100% 100%, 0% 50%, 100% 0%);
+	}
+	.sd-carousel-next-button{
+		right:0.1rem;
+		clip-path: polygon(0% 0%, 100% 50%, 0% 100%, 0% 100%, 40% 50%, 0% 0%);
+	}
+	.sd-carousel-button{
+		z-index:100;
+		cursor: pointer;
+		width: 0.4rem;
+		height: 1rem;
+		background-color:#e6e6e6;
+		position:absolute;
+		top:calc(50% - 0.5rem);
+	}
+	.sd-carousel-button:hover{
+		background-color: #ffcb9d;
+	}
