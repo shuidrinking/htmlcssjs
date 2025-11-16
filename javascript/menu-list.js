@@ -61,6 +61,7 @@ var menuList = [
 	{"menuCode":"mjs035","parentMenuCode":"mjs","showText":"35、判定两个dom元素的位置关系","url":"view/3/dom-node-position-relation.md"},
 	{"menuCode":"mjs036","parentMenuCode":"mjs","showText":"36、什么是生成器函数","url":"view/3/GeneratorFunction.md"},
 	{"menuCode":"mjs037","parentMenuCode":"mjs","showText":"37、监听storage变化","url":"view/3/listen-storage.md"},
+	{"menuCode":"mjs038","parentMenuCode":"mjs","showText":"38、在input上弹出浏览器自带的提示气泡","url":"view/3/popup-inputvalidate-tip.html"},
 	
 	{"menuCode":"mimage","parentMenuCode":"0","showText":"四、图片"},
 	
