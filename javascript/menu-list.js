@@ -21,7 +21,7 @@ var menuList = [
 	{"menuCode":"mcss015","parentMenuCode":"mcss","showText":"15、accesskey属性为input设置聚焦的快捷键"},
 	{"menuCode":"mcss016","parentMenuCode":"mcss","showText":"16、box-decoration-break确保换行背景保持","url":"view/2/box-decoration-break.md"},
 	{"menuCode":"mcss017","parentMenuCode":"mcss","showText":"17、浏览器根据dpr选择srcset属性值相应的图片","url":"view/2/image-srcset.md"},
-	{"menuCode":"mcss0","parentMenuCode":"mcss","showText":"16、xxxxx","url":"view/2/xxxx.md"},
+	{"menuCode":"mcss018","parentMenuCode":"mcss","showText":"18、text-transform文字渲染：自动大写等","url":"view/2/text-transform.md"},
 	
 	{"menuCode":"mjs","parentMenuCode":"0","showText":"三、javascript"},
 	{"menuCode":"mjs001","parentMenuCode":"mjs","showText":"1、获取文档渲染模型","url":"view/3/get-compatMode.md"},
