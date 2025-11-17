@@ -1,0 +1,134 @@
+<style>
+	.flexbox {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap:20px;
+	}
+	.item-div {
+		font-family: Arial, sans-serif;
+		font-size:16px;
+		height:50px;
+		line-height:50px;
+		text-align:center;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		border-radius:6px;
+	}
+	
+	.seconds-input {
+		display:inline-block;font-size: 16px; height:32px;line-height:32px;width: 100px; text-align: center;padding:1px;
+		border: 1px solid #676767;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.length-input{
+		display:inline-block;font-size: 16px; height:32px;line-height:32px;min-width:unset;width: 50px; text-align: center;padding:1px;
+		border: 1px solid #676767;
+	}
+	.right-div {
+		display:inline-block;font-size: 16px; height:32px;line-height:32px;width: 150px; text-align: center;padding:2px;
+		border-bottom: 1px solid #676767;
+	}
+	
+	.right-button {
+		display:inline-block;padding:0 10px; font-size: 16px; height:34px;line-height:34px; cursor: pointer;
+		border: 1px solid #676767;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+	.left-button {
+		display:inline-block;padding:0 10px; font-size: 16px; height:34px;line-height:34px; cursor: pointer;
+		border: 1px solid #676767;
+		border-radius: 5px;
+		border-bottom-right-radius: 0;
+	}
+	.show-left-time-div{
+		height:40px;
+		line-height:40px;
+		width:100%;
+		text-align:center;
+		font-weight:bold;
+	}
+</style>
+<script type="text/javascript" >
+	var showLeftTime;
+	var countdownInterval;
+	
+	function countdown() {
+		showLeftTime=document.getElementById('timeInput');
+		const timeInput = document.getElementById('timeInput').value;
+		let timeRemaining = parseInt(timeInput);
+
+		if (isNaN(timeRemaining) || timeRemaining <= 0) {
+			alert("请输入一个有效的正整数！");
+			return;
+		}
+
+		clearInterval(countdownInterval); // 清除之前的倒计时  
+		updateDisplay(timeRemaining);
+
+		countdownInterval = setInterval(
+			function() {
+				timeRemaining--;
+				if (timeRemaining <= 0) {
+					clearInterval(countdownInterval);
+					showLeftTime.value = "时间到！";
+				}
+				else {
+					updateDisplay(timeRemaining);
+				}
+			}
+		, 1000);
+	}
+	function updateDisplay(seconds) {
+		const minutes = Math.floor(seconds / 60);
+		const remainingSeconds = seconds % 60;
+		showLeftTime.value = String(minutes).padStart(2, '0')+ ':' + String(remainingSeconds).padStart(2, '0');
+	}
+</script>
+
+<script type="text/javascript" >
+	function randomCode(){
+		//单次最长生成11位
+		let onceMaxLengh=11;
+		//请求生成的长度
+		let requestLength = parseInt(document.querySelector("#lengthInput").value, 10);
+		if(isNaN(requestLength)){
+			requestLength=6;
+		}
+		let code="";
+		while(true){
+			code += Math.random().toString(36).substring(2, 2+Math.min(requestLength, onceMaxLengh));
+			if(requestLength<=onceMaxLengh){
+				break;
+			}
+			else{
+				requestLength = requestLength -11;
+			}
+		}
+		if(code.length < requestLength){
+			code.padEnd(requestLength, '0');
+		}
+		document.querySelector('#random-result').textContent = code;
+	}
+</script>
+
+<div class="flexbox">
+	<div class="item-div">
+		<input type="text" class="seconds-input" id="timeInput" placeholder="输入秒数" min="1">
+		<div class="right-button" onclick="countdown();">开始倒计时</div>
+	</div>
+	<div class="item-div">
+		<input type="number" class="length-input" id="lengthInput" min="1" value="6">位随机数，<div class="left-button" onclick="randomCode();">点此生成</div>
+		<div id="random-result" class="right-div"></div>
+	</div>
+</div>

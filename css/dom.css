@@ -213,7 +213,6 @@ input:focus{
 } */
 
 input {
-	min-height:0.25rem;
 	padding-left:0.05rem;
 	border:0;
 	border:0.01rem solid #86b7ff;
@@ -240,12 +239,10 @@ input[type="checkbox"], input[type="radio"]{
 	cursor:pointer;
 }
 input[type="text"], input[type="tel"], input[type="number"], input[type="password"], input[type="month"]{
-	min-width:1.5rem;
 	background: #FFFFFF;
 	line-height: 0;
 }
 input[type="date"]{
-	min-width:1.5rem;
 	background: #FFFFFF;
 	height: 0.27rem;
 	line-height:0.27rem;

@@ -69,7 +69,7 @@ var menuList = [
 	
 	{"menuCode":"mworks","parentMenuCode":"0","showText":"六、高频复用件或特效"},
 	{"menuCode":"mworks001","parentMenuCode":"mworks","showText":"1、从中心向四周舒展","url":"view/6/stretch-from-center.md"},
-	{"menuCode":"mworks002","parentMenuCode":"mworks","showText":"2、倒计时","url":"view/6/countdown.html"},
+	{"menuCode":"mworks002","parentMenuCode":"mworks","showText":"2、倒计时、随机数","url":"view/6/countdown-random.html"},
 	{"menuCode":"mworks003","parentMenuCode":"mworks","showText":"3、文字交融展开效果","url":"view/6/filter-blur-animation.md"},
 	{"menuCode":"mworks004","parentMenuCode":"mworks","showText":"4、hudini api实现鼠标划过扇子张开","url":"view/6/hudini-fanshaped-animation.md"},
 	{"menuCode":"mworks005","parentMenuCode":"mworks","showText":"5、渐变文字或图片喷涂文字","url":"view/6/background-clip-text.md"},
@@ -79,4 +79,5 @@ var menuList = [
 	{"menuCode":"mworks009","parentMenuCode":"mworks","showText":"9、蜂巢展示","url":"view/6/honeycomb-rows.html"},
 	{"menuCode":"mworks010","parentMenuCode":"mworks","showText":"10、鼠标划过时自动上浮说明","url":"view/6/showtip-onhover.md"},
 	{"menuCode":"mworks011","parentMenuCode":"mworks","showText":"11、列队点播式图片播放器","url":"view/6/carousel-image-player.html"},
+	{"menuCode":"mworks012","parentMenuCode":"mworks","showText":"12、利用实现变形和滤镜实现倒影","url":"view/6/shadow.md"},
 ];
