@@ -64,6 +64,10 @@ var menuList = [
 	{"menuCode":"mjs038","parentMenuCode":"mjs","showText":"38、在input上弹出浏览器自带的提示气泡","url":"view/3/popup-inputvalidate-tip.html"},
 	
 	{"menuCode":"mimage","parentMenuCode":"0","showText":"四、图片"},
+	{"menuCode":"mimage001","parentMenuCode":"mimage","showText":"1、svg滤镜","url":"view/4/svg-filter.md"},
+	{"menuCode":"mimage002","parentMenuCode":"mimage","showText":"2、svg滤镜使用详解","url":"view/4/howtouse-svgfilter.md"},
+	{"menuCode":"mimage003","parentMenuCode":"mimage","showText":"3、svg的“stroke-”系列属性结合animation实现轮廓绘制","url":"view/4/svg-draw-path.md"},
+	{"menuCode":"mimage004","parentMenuCode":"mimage","showText":"4、用脚本控制svg轮廓绘制","url":"view/4/svg-draw-path-via-js.md"},
 	
 	{"menuCode":"mfont","parentMenuCode":"0","showText":"五、字体"},
 	
@@ -80,4 +84,9 @@ var menuList = [
 	{"menuCode":"mworks010","parentMenuCode":"mworks","showText":"10、鼠标划过时自动上浮说明","url":"view/6/showtip-onhover.md"},
 	{"menuCode":"mworks011","parentMenuCode":"mworks","showText":"11、列队点播式图片播放器","url":"view/6/carousel-image-player.html"},
 	{"menuCode":"mworks012","parentMenuCode":"mworks","showText":"12、利用实现变形和滤镜实现倒影","url":"view/6/shadow.md"},
+	{"menuCode":"mworks013","parentMenuCode":"mworks","showText":"13、鼠标移入box时3d反馈偏转","url":"view/6/3drotate.html"},
+	{"menuCode":"mworks014","parentMenuCode":"mworks","showText":"14、绕Y轴旋转","url":"view/6/3d-rotateY.md"},
+	{"menuCode":"mworks015","parentMenuCode":"mworks","showText":"15、绕X轴旋转","url":"view/6/3d-rotateX.md"},
+	{"menuCode":"mworks016","parentMenuCode":"mworks","showText":"16、svg滤镜及animation实现酷炫变色文字","url":"view/6/hudini-cool-text.md"},
+	{"menuCode":"mworks017","parentMenuCode":"mworks","showText":"17、屏保式动态渐变背景","url":"view/6/animation-background.md"},
 ];

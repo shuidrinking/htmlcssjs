@@ -59,11 +59,29 @@ function loadView(menuCode, _element){
 		_oldelement.classList.remove("activeMenu");
 	}
 	_element.className="activeMenu";
-	var containner = $("contentContainnerDiv");
+	var _containner = document.querySelector("#contentContainnerDiv");
 	Server.loadResource(url, function(data){
-		containner.innerHTML="";
+		_containner.innerHTML="";
 		if(url.endsWith(".md")){
-			containner.innerHTML = marked.parse(data);
+			_containner.innerHTML = marked.parse(data);
+			//需要重置脚本，通过innerHTML设置的脚本不会被解析
+			let _scriptList = _containner.querySelectorAll("script");
+			if(_scriptList && _scriptList.length>0){
+				//提取脚本
+				let scriptDefList=[];
+				_scriptList.forEach(_script =>{
+					scriptDefList.push({"text":_script.text,"src":_script.src});
+					_containner.removeChild(_script);
+				});
+				
+				scriptDefList.forEach(scriptDef=>{
+					let _script=document.createElement("script");
+					_script.type="text/javascript";
+					if(scriptDef.text){_script.text=scriptDef.text;}
+					if(scriptDef.src){_script.src=scriptDef.src;}
+					_containner.appendChild(_script);
+				});
+			}
 			PR.prettyPrint();
 		}
 		else{
@@ -96,10 +114,10 @@ function loadView(menuCode, _element){
 			let _newDocument = htmlStringParser.parseFromString(data, "text/html");
 			let _headsChilds=_newDocument.head.children;
 			let _bodyChilds = _newDocument.body.children;
-			appendElements(_headsChilds, containner);
-			appendElements(_bodyChilds, containner);
+			appendElements(_headsChilds, _containner);
+			appendElements(_bodyChilds, _containner);
 		}
-		containner.scrollTo({left: 0, top: 0, behavior: "smooth"});
+		_containner.scrollTo({left: 0, top: 0, behavior: "smooth"});
 	});
 }
 /**

@@ -1,6 +1,5 @@
 <style>
 	.flexbox {
-		height: 100vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -121,6 +120,71 @@
 		document.querySelector('#random-result').textContent = code;
 	}
 </script>
+
+<pre class="prettyprint lang-css">
+var showLeftTime;
+var countdownInterval;
+
+function countdown() {
+	showLeftTime=document.getElementById('timeInput');
+	const timeInput = document.getElementById('timeInput').value;
+	let timeRemaining = parseInt(timeInput);
+
+	if (isNaN(timeRemaining) || timeRemaining <= 0) {
+		alert("请输入一个有效的正整数！");
+		return;
+	}
+
+	clearInterval(countdownInterval); // 清除之前的倒计时  
+	updateDisplay(timeRemaining);
+
+	countdownInterval = setInterval(
+		function() {
+			timeRemaining--;
+			if (timeRemaining <= 0) {
+				clearInterval(countdownInterval);
+				showLeftTime.value = "时间到！";
+			}
+			else {
+				updateDisplay(timeRemaining);
+			}
+		}
+	, 1000);
+}
+function updateDisplay(seconds) {
+	const minutes = Math.floor(seconds / 60);
+	const remainingSeconds = seconds % 60;
+	showLeftTime.value = String(minutes).padStart(2, '0')+ ':' + String(remainingSeconds).padStart(2, '0');
+}
+</pre>
+<div class="subTitleDiv">倒计时函数</div>
+
+<pre class="prettyprint lang-css">
+function randomCode(){
+	//单次最长生成11位
+	let onceMaxLengh=11;
+	//请求生成的长度
+	let requestLength = parseInt(document.querySelector("#lengthInput").value, 10);
+	if(isNaN(requestLength)){
+		requestLength=6;
+	}
+	let code="";
+	while(true){
+		code += Math.random().toString(36).substring(2, 2+Math.min(requestLength, onceMaxLengh));
+		if(requestLength<=onceMaxLengh){
+			break;
+		}
+		else{
+			requestLength = requestLength -11;
+		}
+	}
+	if(code.length < requestLength){
+		code.padEnd(requestLength, '0');
+	}
+	document.querySelector('#random-result').textContent = code;
+}
+</pre>
+<div class="subTitleDiv">生成随机数函数</div>
 
 <div class="flexbox">
 	<div class="item-div">

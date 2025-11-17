@@ -1,0 +1,164 @@
+#### 屏保式渐变背景
+
+<style type="text/css">
+@property --perA {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 75%;
+}
+
+@property --perB {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 99%;
+}
+
+@property --perC {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 15%;
+}
+
+@property --perD {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 16%;
+}
+
+@property --perE {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 86%;
+}
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+.animation-background {
+	with:100%;
+	height:300px;
+	background-image: 
+		radial-gradient(
+			circle at var(--perE) 7%,
+			rgba(40, 40, 40, 0.04) 0%,
+			rgba(40, 40, 40, 0.04) 50%,
+			rgba(200, 200, 200, 0.04) 50%,
+			rgba(200, 200, 200, 0.04) 100%
+		),
+		radial-gradient(
+			circle at var(--perC) var(--perD),
+			rgba(99, 99, 99, 0.04) 0%,
+			rgba(99, 99, 99, 0.04) 50%,
+			rgba(45, 45, 45, 0.04) 50%,
+			rgba(45, 45, 45, 0.04) 100%
+		),
+		radial-gradient(
+			circle at var(--perA) var(--perB),
+			rgba(243, 243, 243, 0.04) 0%,
+			rgba(243, 243, 243, 0.04) 50%,
+			rgba(37, 37, 37, 0.04) 50%,
+			rgba(37, 37, 37, 0.04) 100%
+		),
+		linear-gradient(var(--angle), rgb(34, 222, 237), rgb(135, 89, 215));
+		animation: move 30s infinite alternate linear;
+		backdrop-filter:blur(5px)
+}
+
+@keyframes move {
+	100% {
+		--perA: 85%;
+		--perB: 50%;
+		--perC: 45%;
+		--perD: 39%;
+		--perE: 70%;
+		--angle: 360deg;
+	}
+</style>
+<div class="animation-background"></div>
+
+> html代码
+<pre class="prettyprint lang-html">
+	&lt;div class="animation-background"&gt;&lt;/div&gt;
+</pre>
+
+> css代码
+<pre class="prettyprint lang-css">
+@property --perA {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 75%;
+}
+
+@property --perB {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 99%;
+}
+
+@property --perC {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 15%;
+}
+
+@property --perD {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 16%;
+}
+
+@property --perE {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 86%;
+}
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+.animation-background {
+	with:100%;
+	height:300px;
+	background-image: 
+		radial-gradient(
+			circle at var(--perE) 7%,
+			rgba(40, 40, 40, 0.04) 0%,
+			rgba(40, 40, 40, 0.04) 50%,
+			rgba(200, 200, 200, 0.04) 50%,
+			rgba(200, 200, 200, 0.04) 100%
+		),
+		radial-gradient(
+			circle at var(--perC) var(--perD),
+			rgba(99, 99, 99, 0.04) 0%,
+			rgba(99, 99, 99, 0.04) 50%,
+			rgba(45, 45, 45, 0.04) 50%,
+			rgba(45, 45, 45, 0.04) 100%
+		),
+		radial-gradient(
+			circle at var(--perA) var(--perB),
+			rgba(243, 243, 243, 0.04) 0%,
+			rgba(243, 243, 243, 0.04) 50%,
+			rgba(37, 37, 37, 0.04) 50%,
+			rgba(37, 37, 37, 0.04) 100%
+		),
+		linear-gradient(var(--angle), rgb(34, 222, 237), rgb(135, 89, 215));
+		animation: move 30s infinite alternate linear;
+		backdrop-filter:blur(5px)
+}
+
+@keyframes move {
+	100% {
+		--perA: 85%;
+		--perB: 50%;
+		--perC: 45%;
+		--perD: 39%;
+		--perE: 70%;
+		--angle: 360deg;
+	}
+</pre>
