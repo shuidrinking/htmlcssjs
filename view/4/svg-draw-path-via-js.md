@@ -78,3 +78,60 @@
 		fill="transparent" p-id="6272"></path>
 	</svg>
 </div>
+
+>1、svg代码
+<pre class="prettyprint lang-html">
+	&lt;svg&gt;
+		&lt;line class="draw-path" x1="10" y1="100" x2="500" y2="100" stroke-width="2"/&gt;  
+	&lt;/svg&gt;
+	&lt;svg&gt;
+		&lt;circle class="draw-path" cx="50%" cy="50%" r="50" stroke="black" fill="none" stroke-width="3"&gt;&lt;/circle&gt;
+	&lt;/svg&gt;
+</pre>
+
+>2、css代码
+<pre class="prettyprint lang-javascript">
+.draw-path{
+	/*dash虚线样式实现绘制效果*/
+	stroke: #ff0000;/*它定义了图形的外轮廓的颜色，可以是渐变或者图案*/
+	stroke-width:2;/*定义了描边宽度*/
+	stroke-dasharray:var(--len);/*虚线中实线条的长度*/
+	stroke-dashoffset:var(--len);/*虚线中实线条起始位置距离起点的偏移量，负数时表示离终点的偏移量*/
+	stroke-linecap:round; /*路径两端的形状，可选值： butt | round | square | inherit*/
+	/* animation:stroke 2s forwards; */
+}
+</pre>
+
+>3、javascript代码
+<pre class="prettyprint lang-javascript">
+function draw(){
+	const paths = document.querySelectorAll('.draw-path');
+	paths.forEach((p)=>{
+		//将要绘制的路径起点的偏移量设置为svg的长度
+		const l = p.getTotalLength() + 1;
+		p.style.setProperty('--len', l);
+		let animations = p.getAnimations();
+		for(let i=animations.length -1; i>=0;i--){
+			//清理上次添加的动画
+			animations[i].cancel();
+		};
+		//添加新动画, 2秒
+		p.animate(
+				[
+					{
+						strokeDashoffset:`${l}`,
+						offset: 0
+					},
+					{
+						strokeDashoffset:0,
+						offset:1
+					}
+				],
+				{
+					duration: 2000,
+					fill:"forwards"
+				}
+		);
+	});
+}
+</pre>
