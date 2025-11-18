@@ -1,17 +1,21 @@
 #### svg的“stroke-”系列属性实现轮廓绘制
 
+>stroke系列属性有很多，主要用于定义轮廓的渲染属性，也可将文字视为“轮廓”进行设置
 ```
-stroke系列属性有很多，主要用于定义轮廓的渲染属性，也可将文字视为“轮廓”进行设置，常见例如：
+常见的stroke属性：
 stroke: 它定义了图形的外轮廓的颜色，可以是渐变或者图案
 stroke-width: 定义了描边宽度
 stroke-dasharray: 虚线中实线条的长度，即：用于绘制形状轮廓的虚线段和间隙的排列形式
 stroke-dashoffset: 虚线中实线条起始位置距离起点的偏移量，负数时表示离终点的偏移量 
 stroke-linecap: 路径两端的形状，可选值： butt | round | square | inherit 
-		
-通过animation在100%时将偏移量设置为0，实现按轨迹运动，在animation中：
-递减stroke-dashoffset实现绘制
-递减stroke-dasharray实现擦除
 ```
+>路径绘制的实现手法
+```
+通过animation在100%时将偏移量设置为0，实现按轨迹运动，在animation中：
+实现绘制：递减stroke-dashoffset或者递增stroke-dasharray
+实现擦除：递增stroke-dashoffset或者递减stroke-dasharray
+```
+
 <style>
 .line {  
 	stroke-dasharray: 1000; /* 定义线条的长度 */  

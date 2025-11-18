@@ -52,29 +52,54 @@ setTimeout(function() {
 }, 1000);
 </script>
 
+#### 监听任意对象的尺寸变化
+
+<div class="demobox">
+	<div class="onedemo" style="height:auto;">
+		<input type="range" value="600" min="300" max="1300">
+	</div>
+</div>
+<div class="demobox">
+	<div id="textContent">
+		<h1>So what happened?</h1>
+		<p>And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it! Ow, my spirit! I don't want to be rescued. You guys aren't Santa! You're not even robots. I've got to find a way to escape the horrible ravages of youth. Suddenly, I'm going to the bathroom like clockwork, every three hours. And those jerks at Social Security stopped sending me checks. Now 'I' have to pay 'them'!</p>
+	</div>
+</div>
+
+
+>1、构造函数说明：
 <pre class="prettyprint lang-javascript">
-1、构造函数说明：
 let resizeObserver = ResizeObserver(callback(entries, observer))
-每当被监听的元素调整大小时，会调用callback函数，callback接收两个参数：
+
+//每当被监听的元素调整大小时，会调用callback函数，callback接收两个参数：
 entries：一个 ResizeObserverEntry 对象数组，可以用于获取每个元素改变后的新尺寸。
 observer：对 ResizeObserver 自身的引用。
 
 ResizeObserverEntry有如下属性可在回调函数中使用：
+
+//一个对象，当运行回调时，该对象包含着正在观察元素的新边框盒的大小。
 ResizeObserverEntry.borderBoxSize
-一个对象，当运行回调时，该对象包含着正在观察元素的新边框盒的大小。
+
+//一个对象，当运行回调时，该对象包含着正在观察元素的新内容盒的大小。
 ResizeObserverEntry.contentBoxSize
-一个对象，当运行回调时，该对象包含着正在观察元素的新内容盒的大小。
+
+//一个对象，当运行回调时，该对象包含着正在观察元素的新内容盒的大小（以设备像素为单位）。
 ResizeObserverEntry.devicePixelContentBoxSize 
-一个对象，当运行回调时，该对象包含着正在观察元素的新内容盒的大小（以设备像素为单位）。
+
+//一个对象，当运行回调时，该对象包含着正在观察元素新大小的 DOMRectReadOnly 对象。请注意，这比以上两个属性有着更好的支持，但是它是 Resize Observer API 早期实现遗留下来的，出于对浏览器的兼容性原因，仍然被保留在规范中，并且在未来的版本中可能被弃用。
 ResizeObserverEntry.contentRect
-一个对象，当运行回调时，该对象包含着正在观察元素新大小的 DOMRectReadOnly 对象。请注意，这比以上两个属性有着更好的支持，但是它是 Resize Observer API 早期实现遗留下来的，出于对浏览器的兼容性原因，仍然被保留在规范中，并且在未来的版本中可能被弃用。
+
+//对正在观察 Element 或 SVGElement 的引用。
 ResizeObserverEntry.target
-对正在观察 Element 或 SVGElement 的引用。
+</pre>
 
-2、观察器初始化后，将需要被监听的元素加入观察器
+>2、观察器初始化后，将需要被监听的元素加入观察器
+<pre class="prettyprint lang-javascript">
 resizeObserver.observe(someNode);
+</pre>
 
-3、样例代码：
+>3、样例代码
+<pre class="prettyprint lang-javascript">
 const ro = new ResizeObserver(entries => {
 	for (let entry of entries) {
 		if(entry.contentBoxSize) {
@@ -92,15 +117,3 @@ const ro = new ResizeObserver(entries => {
 });
 ro.observe(document.querySelector('#app'));
 </pre>
-<div class="demobox">
-	<div class="onedemo" style="height:auto;">
-		<input type="range" value="600" min="300" max="1300">
-	</div>
-</div>
-<div class="demobox">
-	<div id="textContent">
-		<h1>So what happened?</h1>
-		<p>And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it! Ow, my spirit! I don't want to be rescued. You guys aren't Santa! You're not even robots. I've got to find a way to escape the horrible ravages of youth. Suddenly, I'm going to the bathroom like clockwork, every three hours. And those jerks at Social Security stopped sending me checks. Now 'I' have to pay 'them'!</p>
-	</div>
-</div>
-<div class="titleDiv">监听任意对象的尺寸变化</div>
