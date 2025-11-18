@@ -5,16 +5,11 @@
 * linear-gradient的渐变色背景不支持animation，因为渐变背景本质上是一张被浏览器绘制的临时图，它的绘制过程不允许代码干预
 * 实现的支撑点：自定义属性 、 animation中改变属性值实现
 */
-@property --k {
-	syntax: "<number>";
-	initial-value: 0;
-	inherits: false;
-}
 svg[height="0"] {
 	position: absolute;
 }
 
-.colorful-text {
+.cool-text{
 	height:2rem;
 	line-height:2rem;
 	font-size:1rem;
@@ -34,15 +29,9 @@ svg[height="0"] {
 	/* Firefox not quite there yet, but it's coming */
 	animation: k 4s linear infinite;
 }
-
-@keyframes k {
-	to {
-		--k: 1;
-	}
-}
 </style>
 <div class="demobox">
-	<div class="colorful-text">edk4j低代码极速开发平台</div>
+	<div class="cool-text">edk4j低代码极速开发平台</div>
 </div>
 <!-- 如果去掉下面的元素，发光文字的光辉就不会辐射到文字外部，失去了box-shadow的效果 -->
 <svg width="0" height="0">
