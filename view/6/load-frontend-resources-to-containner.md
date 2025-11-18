@@ -43,7 +43,7 @@ function activeJavascript(_containner, htmlString){
 		//提取脚本
 		let scriptDefList=[];
 		_scriptList.forEach(_script =>{
-			scriptDefList.push({"text":_script.text, "type":_script.type, "src":_script.src});
+			scriptDefList.push({"text":_script.text, "type":_script.type, "onload":_script.onload, "onerror":_script.onerror, "src":_script.src});
 			_containner.removeChild(_script);
 		});
 		//按新的script进行激活
@@ -52,6 +52,7 @@ function activeJavascript(_containner, htmlString){
 			_script.type="text/javascript";
 			if(scriptDef.text){_script.text=scriptDef.text;}
 			if(scriptDef.type){_script.type=scriptDef.type;}
+			if(scriptDef.onload){_script.onload=scriptDef.onload;}
 			if(scriptDef.src){_script.src=scriptDef.src;}
 			_containner.appendChild(_script);
 		});
