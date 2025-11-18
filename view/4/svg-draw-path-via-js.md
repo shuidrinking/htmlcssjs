@@ -56,27 +56,29 @@
 </script>
 
 <div class="demobox">
+	<div style="width:100%;display:flex;align-items: center;justify-content: center;">
+		<svg>
+			<line class="draw-path" x1="10" y1="100" x2="500" y2="100" stroke-width="2"/>  
+		</svg>
+		<svg>
+			<circle class="draw-path" cx="50%" cy="50%" r="50" stroke="black" fill="none" stroke-width="3"></circle>
+		</svg>
+		<svg class="icon"
+		style="width: 100px; height: 100px; vertical-align: middle; fill: currentColor; overflow: hidden;"
+		viewBox="0 0 1024 1024" version="1.1"
+		xmlns="http://www.w3.org/2000/svg" p-id="6269">
+		<path class="draw-path"
+			d="M497.800533 540.458667l433.809067-210.722134v-47.982933L497.92 71.202133 65.348267 282.914133l-0.725334 47.1296 433.1776 210.414934zM0 369.800533L1.962667 242.688 497.800533 0l497.809067 241.681067v128.119466L497.800533 611.6096 0 369.800533z"
+			fill="transparent" p-id="6270"></path>
+		<path class="draw-path"
+			d="M99.797333 388.1728L1.962667 436.053333 0 563.182933l497.800533 241.800534 497.809067-241.800534V435.063467L890.436267 384l-71.611734 36.3776 112.785067 54.7584v47.982933L497.800533 733.832533 64.622933 523.4176l0.725334-47.1296L173.687467 423.253333z"
+			fill="transparent" p-id="6271"></path>
+		<path class="draw-path"
+			d="M99.797333 580.1728L1.962667 628.053333 0 755.182933l497.800533 241.800534 497.809067-241.800534V627.063467L890.436267 576l-71.611734 36.3776 112.785067 54.7584v47.982933l-433.809067 210.7136L64.622933 715.4176l0.725334-47.1296L173.687467 615.253333z"
+			fill="transparent" p-id="6272"></path>
+		</svg>
+	</div>
 	<div class="button lightBlueButton" onclick="draw()">再绘制一次</div>
-	<svg>
-		<line class="draw-path" x1="10" y1="100" x2="500" y2="100" stroke-width="2"/>  
-	</svg>
-	<svg>
-		<circle class="draw-path" cx="50%" cy="50%" r="50" stroke="black" fill="none" stroke-width="3"></circle>
-	</svg>
-	<svg class="icon"
-	style="width: 100px; height: 100px; vertical-align: middle; fill: currentColor; overflow: hidden;"
-	viewBox="0 0 1024 1024" version="1.1"
-	xmlns="http://www.w3.org/2000/svg" p-id="6269">
-	<path class="draw-path"
-		d="M497.800533 540.458667l433.809067-210.722134v-47.982933L497.92 71.202133 65.348267 282.914133l-0.725334 47.1296 433.1776 210.414934zM0 369.800533L1.962667 242.688 497.800533 0l497.809067 241.681067v128.119466L497.800533 611.6096 0 369.800533z"
-		fill="transparent" p-id="6270"></path>
-	<path class="draw-path"
-		d="M99.797333 388.1728L1.962667 436.053333 0 563.182933l497.800533 241.800534 497.809067-241.800534V435.063467L890.436267 384l-71.611734 36.3776 112.785067 54.7584v47.982933L497.800533 733.832533 64.622933 523.4176l0.725334-47.1296L173.687467 423.253333z"
-		fill="transparent" p-id="6271"></path>
-	<path class="draw-path"
-		d="M99.797333 580.1728L1.962667 628.053333 0 755.182933l497.800533 241.800534 497.809067-241.800534V627.063467L890.436267 576l-71.611734 36.3776 112.785067 54.7584v47.982933l-433.809067 210.7136L64.622933 715.4176l0.725334-47.1296L173.687467 615.253333z"
-		fill="transparent" p-id="6272"></path>
-	</svg>
 </div>
 
 >1、svg代码
