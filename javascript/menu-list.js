@@ -22,6 +22,10 @@ var menuList = [
 	{"menuCode":"mcss016","parentMenuCode":"mcss","showText":"16、box-decoration-break确保换行背景保持","url":"view/2/box-decoration-break.md"},
 	{"menuCode":"mcss017","parentMenuCode":"mcss","showText":"17、浏览器根据dpr选择srcset属性值相应的图片","url":"view/2/image-srcset.md"},
 	{"menuCode":"mcss018","parentMenuCode":"mcss","showText":"18、text-transform文字渲染：自动大写等","url":"view/2/text-transform.md"},
+	{"menuCode":"mcss019","parentMenuCode":"mcss","showText":"19、特殊的css选择器","url":"view/2/special-css-selectors.md"},
+	{"menuCode":"mcss020","parentMenuCode":"mcss","showText":"20、使元素沿指定路径运动","url":"view/2/offset-path-animation.md"},
+	{"menuCode":"mcss021","parentMenuCode":"mcss","showText":"21、“点击后toggle弹出框”的专用css属性","url":"view/2/popover-popovertarget.md"},
+	{"menuCode":"mcss022","parentMenuCode":"mcss","showText":"22、“设置元素的宽高比aspect-ratio","url":"view/2/aspect-ratio.md"},
 	
 	{"menuCode":"mjs","parentMenuCode":"0","showText":"三、javascript"},
 	{"menuCode":"mjs001","parentMenuCode":"mjs","showText":"1、获取文档渲染模型","url":"view/3/get-compatMode.md"},
@@ -92,4 +96,5 @@ var menuList = [
 	{"menuCode":"mworks018","parentMenuCode":"mworks","showText":"18、加载html、md、css、js等文件的内容到本页","url":"view/6/load-frontend-resources-to-containner.md"},
 	{"menuCode":"mworks019","parentMenuCode":"mworks","showText":"19、echarts6.0实现dashboard样例","url":"view/6/echarts6.0-dashboard.md"},
 	{"menuCode":"mworks020","parentMenuCode":"mworks","showText":"20、echarts6.0实现dashboard样例","url":"view/6/echatrs6-map-report.md"},
+	{"menuCode":"mworks021","parentMenuCode":"mworks","showText":"21、拖拽排序","url":"view/6/drag-to-order.md"},
 ];
