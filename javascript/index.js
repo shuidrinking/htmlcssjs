@@ -33,7 +33,10 @@ async function loadView(menuCode, _element){
 	else{
 		return;
 	}
-	if(url &&　url.startsWith("http")){
+	if(!url){
+		return;
+	}
+	if(url.startsWith("http")){
 		window.open(url);
 		return;
 	}
