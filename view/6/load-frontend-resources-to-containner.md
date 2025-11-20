@@ -6,9 +6,9 @@ html文件中亦可包含style、javascript
 
 #### 一、加载文件的套路
 
->1.1、使用XmlHttpRequest或fetch加载html文件
+>1.1、加载html、md、json等文件
 ```
-发送 GET请求，提取答复内容即可
+使用XmlHttpRequest或fetch，发送 GET请求，提取答复内容即可
 ```
 
 >1.2、将md文件内容“翻译”为html内容

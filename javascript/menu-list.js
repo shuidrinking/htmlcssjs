@@ -95,6 +95,6 @@ var menuList = [
 	{"menuCode":"mworks017","parentMenuCode":"mworks","showText":"17、屏保式动态渐变背景","url":"view/6/animation-background.md"},
 	{"menuCode":"mworks018","parentMenuCode":"mworks","showText":"18、加载html、md、css、js等文件的内容到本页","url":"view/6/load-frontend-resources-to-containner.md"},
 	{"menuCode":"mworks019","parentMenuCode":"mworks","showText":"19、echarts6.0实现dashboard样例","url":"view/6/echarts6.0-dashboard.md"},
-	{"menuCode":"mworks020","parentMenuCode":"mworks","showText":"20、echarts6.0实现dashboard样例","url":"view/6/echatrs6-map-report.md"},
+	{"menuCode":"mworks020","parentMenuCode":"mworks","showText":"20、echarts6.0绘制地图业务数据报表","url":"view/6/echatrs6-map-report.md"},
 	{"menuCode":"mworks021","parentMenuCode":"mworks","showText":"21、拖拽排序","url":"view/6/drag-to-order.md"},
 ];
