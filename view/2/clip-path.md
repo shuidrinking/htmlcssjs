@@ -32,7 +32,7 @@ clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
 clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 </pre>
 
-<div style="text-align:center;width:100%;padding:0.1rem;display:flex;gap:0.2rem;">
+<div style="text-align:center;width:80%;padding:0.1rem;display:flex;gap:0.2rem;">
 	<div style="background-color:#ff8900;clip-path: polygon(50% 0%, 0% 100%, 100% 100%);width:50px;height:50px;"></div>
 	<div style="background-color:#00bcff;clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);width:50px;height:50px;"></div>
 	<div style="background-color:#00bb67;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);width:50px;height:50px;"></div>

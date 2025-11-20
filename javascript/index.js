@@ -33,7 +33,7 @@ async function loadView(menuCode, _element){
 	else{
 		return;
 	}
-	if(url.startsWith("http")){
+	if(url &&　url.startsWith("http")){
 		window.open(url);
 		return;
 	}
@@ -60,11 +60,12 @@ async function loadView(menuCode, _element){
 	}
 	_element.className="activeMenu";
 	var _containner = document.querySelector("#contentContainnerDiv");
-	_containner.innerHTML="loading...";
 	
+	sdMasker.loading.show();
 	const data = await fetch(url).then((response)=>{
 		return response.text();
 	});
+	sdMasker.loading.hidden();
 	
 	_containner.innerHTML="";
 	if(url.endsWith(".md")){
