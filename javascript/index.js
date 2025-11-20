@@ -25,7 +25,7 @@ function init(){
  * 点击菜单后在iframe中加载目标页面
  * @returns
  */
-function loadView(menuCode, _element){
+async function loadView(menuCode, _element){
 	var url=null;
 	if(menuMap[menuCode]){
 		url=menuMap[menuCode].url;
@@ -60,67 +60,71 @@ function loadView(menuCode, _element){
 	}
 	_element.className="activeMenu";
 	var _containner = document.querySelector("#contentContainnerDiv");
-	Server.loadResource(url, function(data){
-		_containner.innerHTML="";
-		if(url.endsWith(".md")){
-			_containner.innerHTML = marked.parse(data);
-			//需要重置脚本，通过innerHTML设置的脚本不会被解析
-			let _scriptList = _containner.querySelectorAll("script");
-			if(_scriptList && _scriptList.length>0){
-				//提取脚本
-				let scriptDefList=[];
-				_scriptList.forEach(_script =>{
-					scriptDefList.push({"text":_script.text, "type":_script.type, "onload":_script.onload, "onerror":_script.onerror, "src":_script.src});
-					_containner.removeChild(_script);
-				});
-				
-				scriptDefList.forEach(scriptDef=>{
-					let _script=document.createElement("script");
-					_script.type="text/javascript";
-					if(scriptDef.text){_script.text=scriptDef.text;}
-					if(scriptDef.src){_script.src=scriptDef.src;}
-					if(scriptDef.type){_script.type=scriptDef.type;}
-					if(scriptDef.onload){_script.onload=scriptDef.onload;}
-					_containner.appendChild(_script);
-				});
-			}
-			PR.prettyPrint();
+	_containner.innerHTML="loading...";
+	
+	const data = await fetch(url).then((response)=>{
+		return response.text();
+	});
+	
+	_containner.innerHTML="";
+	if(url.endsWith(".md")){
+		_containner.innerHTML = marked.parse(data);
+		//需要重置脚本，通过innerHTML设置的脚本不会被解析
+		let _scriptList = _containner.querySelectorAll("script");
+		if(_scriptList && _scriptList.length>0){
+			//提取脚本
+			let scriptDefList=[];
+			_scriptList.forEach(_script =>{
+				scriptDefList.push({"text":_script.text, "type":_script.type, "onload":_script.onload, "onerror":_script.onerror, "src":_script.src});
+				_containner.removeChild(_script);
+			});
+			
+			scriptDefList.forEach(scriptDef=>{
+				let _script=document.createElement("script");
+				_script.type="text/javascript";
+				if(scriptDef.text){_script.text=scriptDef.text;}
+				if(scriptDef.src){_script.src=scriptDef.src;}
+				if(scriptDef.type){_script.type=scriptDef.type;}
+				if(scriptDef.onload){_script.onload=scriptDef.onload;}
+				_containner.appendChild(_script);
+			});
 		}
-		else{
-			function appendElements(_nodeArray, _targetParent){
-				if(_nodeArray && _nodeArray.length>0){
-					let s = _nodeArray.length ;
-					for(let i=(s-1); i>=0; i--){
-						if(_nodeArray[i].nodeName=="SCRIPT"){
-							let _script=document.createElement("script");
-							_script.type="text/javascript";
-							if(_nodeArray[i].text){_script.text=_nodeArray[i].text;}
-							if(_nodeArray[i].src){_script.src=_nodeArray[i].src;}
-							_targetParent.appendChild(_script);
-						}
-						else if(_nodeArray[i].nodeName=="LINK"){
-							let _link=document.createElement("link");
-							_link.type="text/css";
-							_link.href=_nodeArray[i].href;
-							_link.rel=_nodeArray[i].rel;
-							_targetParent.appendChild(_link);
-						}
-						else{
-							_targetParent.appendChild(_nodeArray[i]);
-						}
+		PR.prettyPrint();
+	}
+	else{
+		function appendElements(_nodeArray, _targetParent){
+			if(_nodeArray && _nodeArray.length>0){
+				let s = _nodeArray.length ;
+				for(let i=(s-1); i>=0; i--){
+					if(_nodeArray[i].nodeName=="SCRIPT"){
+						let _script=document.createElement("script");
+						_script.type="text/javascript";
+						if(_nodeArray[i].text){_script.text=_nodeArray[i].text;}
+						if(_nodeArray[i].src){_script.src=_nodeArray[i].src;}
+						_targetParent.appendChild(_script);
+					}
+					else if(_nodeArray[i].nodeName=="LINK"){
+						let _link=document.createElement("link");
+						_link.type="text/css";
+						_link.href=_nodeArray[i].href;
+						_link.rel=_nodeArray[i].rel;
+						_targetParent.appendChild(_link);
+					}
+					else{
+						_targetParent.appendChild(_nodeArray[i]);
 					}
 				}
-			};
-			
-			let htmlStringParser=new DOMParser();
-			let _newDocument = htmlStringParser.parseFromString(data, "text/html");
-			let _headsChilds=_newDocument.head.children;
-			let _bodyChilds = _newDocument.body.children;
-			appendElements(_headsChilds, _containner);
-			appendElements(_bodyChilds, _containner);
-		}
-		_containner.scrollTo({left: 0, top: 0, behavior: "smooth"});
-	});
+			}
+		};
+		
+		let htmlStringParser=new DOMParser();
+		let _newDocument = htmlStringParser.parseFromString(data, "text/html");
+		let _headsChilds=_newDocument.head.children;
+		let _bodyChilds = _newDocument.body.children;
+		appendElements(_headsChilds, _containner);
+		appendElements(_bodyChilds, _containner);
+	}
+	_containner.scrollTo({left: 0, top: 0, behavior: "smooth"});
 }
 /**
  * 设置菜单显示状态
