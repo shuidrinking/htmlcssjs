@@ -97,4 +97,5 @@ var menuList = [
 	{"menuCode":"mworks019","parentMenuCode":"mworks","showText":"19、echarts6.0实现dashboard样例","url":"view/6/echarts6.0-dashboard.md"},
 	{"menuCode":"mworks020","parentMenuCode":"mworks","showText":"20、echarts6.0绘制地图业务数据报表","url":"view/6/echatrs6-map-report.md"},
 	{"menuCode":"mworks021","parentMenuCode":"mworks","showText":"21、拖拽排序","url":"view/6/drag-to-order.md"},
+	{"menuCode":"mworks022","parentMenuCode":"mworks","showText":"22、MVVM双向绑定同步组件","url":"view/6/model-view-binding.md"},
 ];

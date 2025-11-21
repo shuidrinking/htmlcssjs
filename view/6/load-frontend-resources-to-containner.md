@@ -44,7 +44,8 @@ function activeJavascript(_containner, htmlString){
 		let scriptDefList=[];
 		_scriptList.forEach(_script =>{
 			scriptDefList.push({"text":_script.text, "type":_script.type, "onload":_script.onload, "onerror":_script.onerror, "src":_script.src});
-			_containner.removeChild(_script);
+			_script.parentNode.removeChild(_script);
+			//这个script可能在子孙元素中，因此不能用这句：_containner.removeChild(_script);
 		});
 		//按新的script进行激活
 		scriptDefList.forEach(scriptDef=>{

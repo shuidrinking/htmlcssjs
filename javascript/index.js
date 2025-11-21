@@ -80,7 +80,8 @@ async function loadView(menuCode, _element){
 			let scriptDefList=[];
 			_scriptList.forEach(_script =>{
 				scriptDefList.push({"text":_script.text, "type":_script.type, "onload":_script.onload, "onerror":_script.onerror, "src":_script.src});
-				_containner.removeChild(_script);
+				_script.parentNode.removeChild(_script);
+				//_containner.removeChild(_script);
 			});
 			
 			scriptDefList.forEach(scriptDef=>{
