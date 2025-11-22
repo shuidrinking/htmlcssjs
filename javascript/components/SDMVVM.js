@@ -6,7 +6,7 @@
  * 
  * 用法：new SDMVVM(_container, jsonObject);
  */
-class SDMVVM{
+var SDMVVM = SDMVVM??class{
 	constructor(_containner, model){
 		this._containner = _containner; //本组绑定的根元素
 		/*
