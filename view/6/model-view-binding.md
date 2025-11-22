@@ -4,10 +4,6 @@
 .container {
 	max-width: 100%;
 	margin: 0 auto;
-	background: white;
-	border-radius: 12px;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
 }
 .content {
 	padding: 30px;
@@ -111,7 +107,7 @@ pre {
 	}
 }
 </style>
-<script src="./javascript/components/SDMVVMComponent.js" onload="doInitMvvm();" defer></script>
+<script src="./javascript/components/SDMVVM.js" onload="doInitMvvm();" defer></script>
 
 <div class="container">
 	<div class="content">
@@ -170,7 +166,7 @@ pre {
 			},
 			formattedTime: new Date().toLocaleString()
 		};
-		const app = new SDMVVMComponent(container, model);
+		const app = new SDMVVM(container, model);
 	}
 </script>
 
@@ -184,18 +180,19 @@ pre {
 This terminology specifically describes what's happening: the binding occurs between the data model and the visual view, making it more precise than the generic "two-way binding."
 </pre>
 
->2、MVVM模式的实现需要的组件和原理
-```
-（1）模型数据存取强制代理：模型内各原子数据都配置一个拦截器，使用Proxy，实现对数据的访问和修改进行拦截，负责数据的存取以及调用dom修改器
-（2）dom修改器：为模型内每个原子数据都配置若干个dom修改器，当数据发生变化时，逐个调用每个修改器更新其绑定的DOM元素
-（3）dom输入监听器：为每个dom元素都设置输入事件监听器，当DOM元素的值发生变化时，触发监听器更新其绑定的模型中的数据
-```
->3、MVVM中的“加载时建立绑定关系”和“实时同步”是两套动作，分别是怎么实现的
+>2、MVVM中的“加载时建立绑定关系”和“实时同步”两套动作的实现套路
 <pre class="prettyprint lang-javascript">
 （1）在HTML元素上为element设置 v-model或者v-text 属性，其值为指定要绑定的模型数据的key，key的值允许对象多层嵌套的点"."连接
-（2）扫描页面元素，获取其属性中设置的“绑定模型”，建立绑定关系
-（3）绑定关系建立后，立即建立相互实时同步的动作：为element添加监听器，在事件触发后监听器负责立即更新模型中的数据，为模型的具体属性值被set后置后继动作，更新dom元素的渲染内容
+（2）扫描页面元素完成绑定的套路：获取设置了属性 v-model或者v-text的元素，为其添加两个函数：监听主动输入、被动渲染函数
+（3）相互实时同步的套路：当element数据主动输入时，由element的输入监听器负责立即更新模型中的数据；当模型的具体属性值被set后，调用更新dom元素的渲染函数
 </pre> 
+
+>3、MVVM模式的实现需要的组件和原理
+```
+（1）模型数据存取强制代理：使用Proxy对模型内属性的get和set提供代理，实现对数据的访问和修改进行拦截，负责数据的存取以及调用dom渲染器
+（2）dom渲染器：为模型内每个原子数据都配置若干个dom渲染器，当数据发生变化时，逐个调用每个渲染器更新其绑定的DOM元素
+（3）dom输入监听器：为每个dom元素都设置输入事件监听器，当DOM元素的值发生变化时，触发监听器更新其绑定的模型中的数据
+```
 
 >4、关键代码段
 <pre class="prettyprint lang-javascript">
