@@ -88,8 +88,26 @@
 	line-height:1rem;
 	font-size: 0.5rem;
 	font-weight: bolder;
-	/*above（上方）、below（下方）、left（左侧）和right（右侧）*/
-	-webkit-box-reflect: below 1px linear-gradient(transparent, #00000052);
+	&:before {
+		position: absolute;
+		left: 0px;
+		bottom: -0.6rem;
+		z-index: -1;
+		content: "水面倒影";
+		transform: rotatex(180deg) translate(0.8em, 0.1rem) scaleY(0.8) skew(300deg);
+		color: #000000;
+		filter: blur(0.02rem);
+		-webkit-mask-image: linear-gradient(transparent, #000000);
+	}
+	/* 
+	这是个非标准的属性
+	above（上方）、below（下方）、left（左侧）和right（右侧）
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #00000052); 
+	*/
+}
+.reflection-box{
+	perspective:500px;/*透视距离*/
+	transform-style: preserve-3d;/*作为父元素要开启3d模式，否则子元素的运动不会呈现3d效果*/
 }
 </pre>
 
