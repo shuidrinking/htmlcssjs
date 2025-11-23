@@ -2,6 +2,7 @@ var menuList = [
 	{"menuCode":"mhtml","parentMenuCode":"0","showText":"一、html"},
 	{"menuCode":"mhtml001","parentMenuCode":"mhtml","showText":"1、概要标题标签，点击后展开概要信息","url":"view/1/summary.md"},
 	{"menuCode":"mhtml002","parentMenuCode":"mhtml","showText":"2、ruby用于添加拼音等标注","url":"view/1/ruby.md"},
+	{"menuCode":"mhtml003","parentMenuCode":"mhtml","showText":"3、dialog标签","url":"view/1/dialog-with-backdrop.md"},
 	
 	{"menuCode":"mcss","parentMenuCode":"0","showText":"二、css"},
 	{"menuCode":"mcss001","parentMenuCode":"mcss","showText":"1、盒模型","url":"view/2/box-sizing.md"},
