@@ -9,6 +9,7 @@
 		offset-path: url("#motionPath");/* path('M 10 80 C 80 10, 130 10, 190 80 S 300 150, 360 80'); */
 		animation:move 5s linear;
 		animation-iteration-count: infinite;
+		position:absolute;
 	}
 	@keyframes move {
 		0% {
@@ -55,6 +56,7 @@ offset-path是CSS中的一个属性，值可以ray()、polygon()、path()、url(
 	offset-path: path('M 10 80 C 80 10, 130 10, 190 80 S 300 150, 360 80');
 	animation:move 5s linear;
 	animation-iteration-count: infinite;
+	position:absolute;
 }
 @keyframes move {
 	0% {
