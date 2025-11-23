@@ -30,6 +30,7 @@ html body{
 }
 #headDiv{
 	position: fixed;
+	z-index:100;
 	background-color: #ffffff;
 	height: 0.4rem;
 	width:3.5rem;
