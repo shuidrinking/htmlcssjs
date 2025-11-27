@@ -31,9 +31,9 @@
 			bottom: -0.6rem;
 			z-index: -1;
 			content: "水面倒影";
-			transform: rotatex(180deg) translate(0.8em, 0.1rem) scaleY(0.8) skew(300deg);
+			transform: rotatex(180deg) translate(0.5rem, 0.1rem) scaleY(0.8) skew(300deg);
 			color: #000000;
-			filter: blur(0.02rem);
+			filter: url(#wavefilter) blur(0.02rem);
 			-webkit-mask-image: linear-gradient(transparent, #000000);
 		}
 		/* 
@@ -57,6 +57,12 @@
 		</div>
 	</div>
 </div>
+<svg width="0" height="0">
+<filter id="wavefilter" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+	<feTurbulence type="turbulence" baseFrequency="0.015 0.1" numOctaves="2" seed="20" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"/>
+	<feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap"/>
+</filter>
+</svg>
 
 >1、背影css代码
 <pre class="prettyprint lang-css">
