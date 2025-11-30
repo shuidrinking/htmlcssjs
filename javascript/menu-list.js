@@ -67,6 +67,7 @@ var menuList = [
 	{"menuCode":"mjs036","parentMenuCode":"mjs","showText":"36、什么是生成器函数","url":"view/3/GeneratorFunction.md"},
 	{"menuCode":"mjs037","parentMenuCode":"mjs","showText":"37、监听storage变化","url":"view/3/listen-storage.md"},
 	{"menuCode":"mjs038","parentMenuCode":"mjs","showText":"38、在input上弹出浏览器自带的提示气泡","url":"view/3/popup-inputvalidate-tip.md"},
+	{"menuCode":"mjs039","parentMenuCode":"mjs","showText":"39、被async修饰的函数必须使用await调用","url":"view/3/async-function-call-rule.md"},
 	
 	{"menuCode":"mimage","parentMenuCode":"0","showText":"四、图片"},
 	{"menuCode":"mimage001","parentMenuCode":"mimage","showText":"1、svg滤镜","url":"view/4/svg-filter.md"},

@@ -45,6 +45,43 @@ document.ready = function (callback) {
 		callback();
 	}
 }
+
+/**
+ * 判断是否移动端
+ * 调用必须使用 await isMobile()，否则获取的是一个Promise
+ * 被async修饰的函数必须使用await调用，否则获取到的永远是一个Promise
+ */
+async function isMobile(){
+	if (navigator.userAgentData) {
+		const result = await navigator.userAgentData.getHighEntropyValues(["architecture",
+"bitness",
+"formFactor",
+"fullVersionList",
+"model",
+"platformVersion",
+"uaFullVersion",
+"wow64"])
+			.then(ua => {
+				return ua.mobile;
+			});
+		return result;
+	}
+	else{
+		const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+		const isUserAgentMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+		const isMediaQueryMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+		const canToutch = 'ontouchstart' in document.documentElement; //这个并不标准，有pc设备浏览器也支持拖拽
+		return isUserAgentMobile || isMediaQueryMobile || canToutch;
+	}
+}
+
+(async () => {
+	const mobile = await isMobile();
+	if(!mobile){
+		document.write("请您在电脑中打开，本站点的内容过于丰富，不适合在移动端浏览！");
+	}
+})();
+
 /* 
  * 浏览器缩放，整页内容按比例也缩放
  * 将本函数抽取出来，不以匿名函数方式执行，原因是：可以在页面上提供 +-按钮，点击时调用本函数，让客户自定义显示大小
