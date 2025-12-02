@@ -5,6 +5,12 @@ decription: provide dom element operate functions
 @email: shuidrinking@126.com
 @date: 2018-09-18
 */
+!function(){
+	if(typeof(Worker) == "undefined"){
+		writeWarn("您的浏览器版本过低，请使用edge、chrome、firefox等浏览器！");
+		return;
+	}
+}();
 /*
  * 服务器定义
  */
@@ -53,14 +59,7 @@ document.ready = function (callback) {
  */
 async function isMobile(){
 	if (navigator.userAgentData) {
-		const result = await navigator.userAgentData.getHighEntropyValues(["architecture",
-"bitness",
-"formFactor",
-"fullVersionList",
-"model",
-"platformVersion",
-"uaFullVersion",
-"wow64"])
+		const result = await navigator.userAgentData.getHighEntropyValues(["architecture","bitness","formFactor","fullVersionList","model","platformVersion","uaFullVersion","wow64"])
 			.then(ua => {
 				return ua.mobile;
 			});
@@ -75,12 +74,24 @@ async function isMobile(){
 	}
 }
 
+function writeWarn(message){
+	if(!message){
+		message = "stop render, but no message !"
+	}
+	//知识内容结构丰富，建议您在PC浏览器中阅读！
+	//您的浏览器不支持html5，请使用高版本的浏览器！
+	return`<div style="text-align: center;display: flex;align-items: center;height: 100%;width: 100%;justify-content: center;font-weight:bold;color:#0049a4;font-size:20px;">
+	${message}
+	</div>`;
+}
+/* 
 (async () => {
 	const mobile = await isMobile();
 	if(!mobile){
-		document.write("请您在电脑中打开，本站点的内容过于丰富，不适合在移动端浏览！");
+		document.write(openOnThePc());
 	}
 })();
+ */
 
 /* 
  * 浏览器缩放，整页内容按比例也缩放

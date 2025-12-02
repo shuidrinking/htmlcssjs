@@ -24,15 +24,15 @@
 	:root {
 		--body-font-size:14px;
 		--rem-common-font-size:0.14rem;
-		--input-font-size:0.16rem;
+		--input-font-size:0.14rem;
 	}
 }
 
 @media screen and (max-width: 1080px) {
 	:root {
-		--body-font-size:26px;
-		--rem-common-font-size:0.26rem;
-		--input-font-size:0.26rem;
+		--body-font-size:20rem;
+		--rem-common-font-size:0.20rem;
+		--input-font-size:0.20rem;
 	}
 }
 
@@ -853,4 +853,26 @@ summary::after {
 }
 /*详细解释说明样式定义*/
 details[open]::details-content {
+}
+/*标题行*/
+.summary{
+	outline: 0;
+	position: relative;
+	display: flex;/*垂直居中*/
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0.05rem 0.15rem;
+	cursor:pointer;
+	font-weight:bold;
+	overflow: hidden;
+	border-radius: 0.04rem;
+}
+.summary::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0.04rem;
+	height: 100%;
+	background: linear-gradient(to right, #d0d7de, #eeeeee);
 }
