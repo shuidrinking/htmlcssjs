@@ -1,13 +1,16 @@
 #### 如何使用svg滤镜使用详解
 
-#### 一、普通样式中设置；
+##### 一、引用svg滤镜的语法范式；
+
+<pre class="prettyprint lang-css">
 .some-class{
 	filter="url(#svgfilter的id)"
 }
+</pre>
 
-#### 二、svg中使用filter
+##### 二、svg中使用filter
 
->1、在svg里对复杂图片使用svg过滤器
+>2.1、在svg里对复杂图片使用svg过滤器
 <pre class="prettyprint lang-html">
 &lt;svg&gt;
 	&lt;image 
@@ -20,7 +23,7 @@
 &lt;/svg&gt;
 </pre>
 
->2、在svg里对文字使用svg过滤器
+>2.2、在svg里对文字使用svg过滤器
 <pre class="prettyprint lang-html">
 &lt;svg&gt;
 	&lt;g filter="url(#svgfilter的id)"&gt;
@@ -29,7 +32,7 @@
 &lt;/svg&gt;
 </pre>
 
->3、在svg里对一个方块形状使用svg过滤器
+>2.3、在svg里对一个方块形状使用svg过滤器
 <pre class="prettyprint lang-html">
 &lt;svg&gt;
 	&lt;rect x="100" y="100" width="90" height="90" 
