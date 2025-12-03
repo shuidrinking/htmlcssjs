@@ -1,6 +1,6 @@
 #### 对类或函数添加被调用的限制条件
 
->1.使用样例
+>1、使用样例
 <pre class="prettyprint lang-javascript">
 'use strict'
 /*

@@ -10,7 +10,7 @@
 	vertical-align:sub;
 }
 </style>
->1.上标
+>1、上标
 <pre class="prettyprint lang-s">
 #垂直对齐设置实现
 vertical-align:super;
@@ -22,7 +22,7 @@ font-size:6px;
 
 <p>爱因斯坦的质能方程为：E = mc<sup class="super">2</sup></p>
 
->2.下标
+>2、下标
 <pre class="prettyprint lang-s">
 #垂直对齐设置实现
 vertical-align:sub;

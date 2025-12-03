@@ -5,7 +5,7 @@ BroadcastChannel 接口表示给定源的任何浏览上下文都可以订阅的
 消息通过 message 事件进行广播，该事件在侦听该频道的所有 BroadcastChannel 对象上触发，发送消息的对象除外。
 ```
 
->1.使用样例
+>1、使用样例
 <pre class="prettyprint lang-javascript">
 node.insertAdjacentElement(positionString, _newElement);
 /*

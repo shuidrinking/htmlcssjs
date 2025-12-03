@@ -69,7 +69,7 @@
 	</div>
 </div>
 
->1.css定义
+>1、css定义
 <pre class="prettyprint lang-css">
 .containner{
 	width:100%;
@@ -127,7 +127,7 @@
 }
 </pre>
 
->2.html
+>2、html
 <pre class="prettyprint lang-html">
 &lt;div class="container"&gt;
 	&lt;div class="avatar"&gt;

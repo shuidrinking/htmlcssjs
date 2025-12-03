@@ -1,6 +1,6 @@
 #### Array和Set的一些高级API
 
->1.调用getComputedStyle函数
+>1、调用getComputedStyle函数
 <pre class="prettyprint lang-javascript">
 let array1=[一些数值];
 let array2=[一些数值];

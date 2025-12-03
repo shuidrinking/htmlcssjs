@@ -1,12 +1,12 @@
 #### 1、backdrop-filter属性的值有许多css函数，可实现经验特效
 
->1.1 使用url函数，转用svg滤镜
+>1.1、使用url函数，转用svg滤镜
 <pre class="prettyprint lang-css">
 /*URL to SVG filter*/
 backdrop-filter: url("common-filters.svg#filter");
 </pre>
 
->1.2 其他滤镜函数样例
+>1.2、其他滤镜函数样例
 <pre class="prettyprint lang-css">
 /*&lt;filter-function&gt; values*/
 backdrop-filter: blur(2px);#使元素从背景开始往下层的内容全部模糊，对元素内容及上层内容都不模糊
@@ -21,7 +21,7 @@ backdrop-filter: sepia(90%);
 backdrop-filter: saturate(80%);
 </pre>
 
->1.2 可以同时设置多个滤镜函数
+>1.3、可以同时设置多个滤镜函数
 <pre class="prettyprint lang-css">
 /*Multiple filters*/
 backdrop-filter: url("filters.svg#filter") blur(4px) saturate(150%);

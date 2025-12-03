@@ -1,12 +1,13 @@
  #### 1、clip-path属性用于在盒子上绘制或者剪切出任意自定义形状
- >1.1 语法范式
+ 
+ >1.1、语法范式
 <pre class="prettyprint lang-s">
 clip-path:函数名(参数)
 可用函数名包括：
 inset、polygon、circle、ellipse、path
 </pre>
 
->1.2 可用函数
+>1.2、可用函数
 <pre class="prettyprint lang-s">
 #polygon 定义多边形
 范式：polygon(点1, 点2, ... , 点n)
@@ -22,7 +23,7 @@ inset、polygon、circle、ellipse、path
 clip-path: path("M  20  240  L  20  80 L 160  80  L 160  20 L 280 100  L 160 180 L 160 120  L  60 120 L  60 240 Z");
  </pre>
  
->1.3 举例
+>1.3、举例
 <pre class="prettyprint lang-s">
 #绘制等腰三角形
 clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -39,5 +40,5 @@ clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 	<div style="background-color:#00bb67;clip-path: path('M  20  240  L  20  80 L 160  80  L 160  20 L 280 100  L 160 180 L 160 120  L  60 120 L  60 240 Z');"></div>
 </div>
 
->1.4 在线调试剪切工具
+>1.4、在线调试剪切工具
 <a href="https://tools.jb51.net/code/css3path" target="_blank">路径在线调试</a>

@@ -2,7 +2,7 @@
 
 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/animate" target="_blank">MDN文档</a>
 
->1.动画对象的api
+>1、动画对象的api
 <pre class="prettyprint lang-javascript">
 Animation.cancel()
 清除此动画的所有keyframeEffects，并中止播放。
@@ -16,7 +16,7 @@ Animation.reverse()
 反转播放动画，直到播放到动画开始时停止。如果动画完成或未播放，它将从头到尾播放。
 </pre>
 
->2.操作dom元素的动画的api
+>2、操作dom元素的动画的api
 <pre class="prettyprint lang-javascript">
 //getAnimations函数获取元素已有的动画数组
 element.getAnimations();
@@ -48,7 +48,7 @@ animate函数参数详细解释：
 */
 </pre>
 
->3.样例
+>3、样例
 <pre class="prettyprint lang-javascript">
 // animation of the cupcake slowly getting eaten up
 const nommingCake = document

@@ -1,11 +1,11 @@
 #### Promise.allSettle函数可以将一批异步函数打包执行
 
->1.适用场景
+>1、适用场景
 <pre class="prettyprint lang-javascript">
 需要等待一组任务都执行完成后，才能执行其他任务。
 </pre>
 
->2.代码样例
+>2、代码样例
 <pre class="prettyprint lang-javascript">
 function resolveAfter2Seconds() {
   console.log("开始较慢兑现的 promise");

@@ -1,6 +1,6 @@
 #### 利用DOMParser类的parseFromString函数将字符串解析为dom元素或者节点
 
->1.语法
+>1、语法
 <pre class="prettyprint lang-javascript">
 //函数原型
 parseFromString(input, mimeType)
@@ -46,11 +46,11 @@ function laodFromHtmlString(_parentElement, htmlString=""){
 //特别注意
 如果html字符串的最前位置是style、script标签，则parseFromString返回的结果中会自动将它们置于head中，如果混在中间，则会被置于body中。
 </pre>
->2.效果等同于设置innerHTML或调用document.write
+>2、效果等同于设置innerHTML或调用document.write
 <pre class="prettyprint lang-javascript">
 
 </pre>
->3.与createElement相比
+>3、与createElement相比
 <pre class="prettyprint lang-javascript">
 createElement只能创建一个指定的元素
 </pre>

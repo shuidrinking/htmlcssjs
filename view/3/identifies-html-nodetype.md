@@ -5,7 +5,7 @@
 元素类型定义在元素的nodeType属性中
 ```
 
->1.w3c定义nodeType
+>1、w3c定义nodeType
 <pre class="prettyprint lang-javascript">
 const unsigned short ELEMENT_NODE = 1;//HMTLElement元素
 const unsigned short ATTRIBUTE_NODE = 2;
@@ -20,7 +20,7 @@ const unsigned short DOCUMENT_TYPE_NODE = 10;
 const unsigned short DOCUMENT_FRAGMENT_NODE = 1
 </pre>
 
->2.判断方法
+>2、判断方法
 <pre class="prettyprint lang-javascript">
 只使用 nodeType这个属性特征是无法判断的，因为可以自己定义一个含有nodeType属性的对象，比如{nodeType:1}
 下面是准确的方法：

@@ -1,4 +1,5 @@
 #### 文字交融展开特效
+
 <style>
 	.text-box {
 		height:2rem;
@@ -28,7 +29,7 @@
 	<span class="text">一派溪山千古秀</span>
 </div>
 
->1.css
+>1、css
 <pre class="prettyprint lang-css">
 	.text-box {
 		height:200px;
@@ -54,7 +55,7 @@
 	}
 </pre>
 
->2.html
+>2、html
 <pre class="prettyprint lang-html">
 	&lt;div class="demobox text-box"&gt;
 		&lt;span class="text">一派溪山千古秀&lt;/span&gt;

@@ -2,7 +2,7 @@
 
 用于上传图片预览等场景
 
->1.利用file类型的input读取为base64
+>1、利用file类型的input读取为base64
 <pre class="prettyprint lang-javascript">
 //html部分代码样例
 &lt;input type="file" style="display:none;" id="custIconFile" accept=".png,.jpg,.jpeg,.webp,.svg" onchange="showCustIcon(this);"/&gt;
@@ -19,7 +19,7 @@ function showCustIcon(_file){
 }
 </pre>
 
->2.读取文本内容
+>2、读取文本内容
 <pre class="prettyprint lang-javascript">
 //将上面的readAsDataURL换为readAsText，即可读取原始内容，例如读取svg文件的原始内容
 let reader= new FileReader();

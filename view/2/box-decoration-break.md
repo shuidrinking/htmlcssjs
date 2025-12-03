@@ -1,4 +1,5 @@
 #### box-decoration-break属性针对换行背景保持
+
 <style>
 .myspan {
 	border-radius: 0.1rem;
@@ -33,7 +34,7 @@
 </div>
 
 
->1.适用场景
+>1、适用场景
 <pre class="prettyprint lang-css">
 box-decoration-break:clone;
 

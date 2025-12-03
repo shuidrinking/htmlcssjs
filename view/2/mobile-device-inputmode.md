@@ -1,6 +1,6 @@
 #### 在移动设备上设置输入框的键盘布局
 
->1.inputmode属性值
+>1、inputmode属性值
 <pre class="prettyprint lang-s">
 设置input标签的inputmode属性值，可以设定移动设备上的虚拟键盘布局，这个和type属性不同，type只能控制输入值，inputmode用来控制虚拟键盘布局。
 
@@ -14,7 +14,7 @@ search：为搜索输入优化的虚拟键盘，可能将返回键重新标记�
 email：为邮件地址输入优化的虚拟键盘，包含“@”符号和其他优化。
 url：为网址输入优化的虚拟键盘，包含“/”键和历史记录访问等1。
 </pre>
->2.按场景设置
+>2、按场景设置
 <pre class="prettyprint lang-s">
 数字输入： 当输入框预期用户输入数字时，可以使用 inputmode="numeric" 或 inputmode="decimal"。这将显示数字键盘，方便用户快速输入数字。例如，用于输入电话号码、邮政编码、信用卡号等。
 电话号码输入： 使用 inputmode="tel" 将显示电话拨号键盘，包含*、#等特殊字符。

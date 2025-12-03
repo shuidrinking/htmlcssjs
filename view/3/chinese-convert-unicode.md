@@ -1,6 +1,6 @@
 #### Unicode编码和中文字符转换
 
->1.Unicode转中文
+>1、Unicode转中文
 <pre class="prettyprint lang-javascript">
 function unicodeToChinese(str) {
   return str.replace(/\\u([\d\w]{4})/gi, function (match, grp) {
@@ -13,7 +13,7 @@ var chineseStr = unicodeToChinese(unicodeStr);
 console.log(chineseStr); // 输出: 中国
 </pre>
 
->2.中文转Unicode
+>2、中文转Unicode
 <pre class="prettyprint lang-javascript">
 function chineseToUnicode(data){
 	if(!data){return;}

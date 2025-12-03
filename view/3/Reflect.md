@@ -20,7 +20,7 @@ Reflect 一共有13个静态方法：
 13、set(target, key, value[, receiver]) 设置target对象的key属性等于value，第三个参数和set一样。返回一个布尔值。
 ```
 
->1.使用样例
+>1、使用样例
 <pre class="prettyprint lang-javascript">
 // 老写法
 'assign' in Object // true

@@ -1,6 +1,6 @@
 #### 获取元素渲染后的当前的属性
 
->1.调用getComputedStyle函数
+>1、调用getComputedStyle函数
 <pre class="prettyprint lang-javascript">
 语法：
 window.getComputedStyle(_element);
@@ -32,7 +32,7 @@ console.log(computedValue['--height-val']); //undefined  无法访问自定义�
 console.log(computedValue.cssFloat); //right 
 </pre>
 
->2.获取元素坐标
+>2、获取元素坐标
 <pre class="prettyprint lang-javascript">
 node.getBoundingClientRect()
 返回一个DOMRect对象：

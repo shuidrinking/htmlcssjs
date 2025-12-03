@@ -20,7 +20,7 @@
 	<div class="onedemo gradient"></div>
 </div>
 
->1.样例css
+>1、样例css
 <pre class="prettyprint lang-css">
 	@property --d {
 		syntax:'<angle>';
@@ -38,7 +38,7 @@
 		--d:60deg;
 	}
 </pre>
->2.样例html
+>2、样例html
 <pre class="prettyprint lang-html">
 	&lt;div class="demobox"&gt;
 		&lt;div class="onedemo gradient"&gt;&lt;/div&gt;

@@ -1,6 +1,6 @@
 #### Intl-原生javascript具备的格式化工具
 
->1.Intl简介
+>1、Intl简介
 ```
 Intl 对象是 ECMAScript 国际化 API 的一个命名空间，它提供了精确的字符串对比、数字格式化，和日期时间格式化。Collator、NumberFormat、 DateTimeFormat 等对象的构造函数是 Intl 对象的属性。
 ```
@@ -8,7 +8,7 @@ Intl 对象是 ECMAScript 国际化 API 的一个命名空间，它提供了精�
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat" target="_blank">DateTimeFormat</a>&nbsp;&nbsp;
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat" target="_blank">NumberFormat</a>
 
->2.各格式化工具的狗仔函数范式，以及option可取值
+>2、各格式化工具的狗仔函数范式，以及option可取值
 <pre class="prettyprint lang-javascript">
 //Intl.DateTimeFormat、Intl.NumberFormat、Intl.RelativeTimeFormat等都有同样参数的构造函数
 //例如：
@@ -19,7 +19,7 @@ new Intl.DateTimeFormat(locales, options)
 // <a href="https://tc39.es/ecma402/" target="_blank">点此查阅ECMAScript定义</a>
 </pre>
 
->3.样例：Intl.NumberFormat
+>3、样例：Intl.NumberFormat
 <pre class="prettyprint lang-javascript">
 const number = 123456.789;
 let formatter = new Intl.NumberFormat(
@@ -34,7 +34,7 @@ let formatter = new Intl.NumberFormat(
 console.log(formatter.format(number));
 </pre>
 
->4.样例：Intl.DateTimeFormat.format函数
+>4、样例：Intl.DateTimeFormat.format函数
 <pre class="prettyprint lang-javascript">
 // <a href="https://tc39.es/ecma402/#sec-datetimeformat-abstracts" target="_blank">点此查阅DateTimeFormat的各个option的可取值</a>
 let dtFormatter = new Intl.DateTimeFormat("zh-CN", {
@@ -60,7 +60,7 @@ let dtFormatter = new Intl.DateTimeFormat("zh-CN", {
 console.log(dtFormatter.format(new Date()));
 </pre>
 
->5.样例：Intl.DateTimeFormat.formatToParts函数
+>5、样例：Intl.DateTimeFormat.formatToParts函数
 <pre class="prettyprint lang-javascript">
 let dtFormatter = new Intl.DateTimeFormat("zh-CN", {
 		year: "numeric",
@@ -81,7 +81,7 @@ for (const part of partsArray) {
 }
 </pre>
 
->6.样例：Intl.RelativeTimeFormat
+>6、样例：Intl.RelativeTimeFormat
 <pre class="prettyprint lang-javascript">
 // 相对于当前的某个时间点的时间的语言表达
 // Create a relative time formatter in your locale
