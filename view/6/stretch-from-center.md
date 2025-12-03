@@ -62,10 +62,10 @@
 </style>
 <div class="containner">
 	<div class="stretch-from-center text">
-		方法一
+		鼠标挪来1
 	</div>
 	<div class="avatar text">
-		方法二
+		鼠标挪来2
 	</div>
 </div>
 
@@ -78,7 +78,7 @@
 	justify-content:center;
 	gap:30px;
 }
-/*方法一：*/
+/*鼠标挪来1：*/
 .stretch-from-center{
 	width: 200px;
 	height: 200px;
@@ -104,7 +104,7 @@
 	left:0;
 	top:0;
 }
-/*方法二：*/
+/*鼠标挪来2：*/
 .avatar{
 	width: 200px;
 	height: 200px;

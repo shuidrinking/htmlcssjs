@@ -6,11 +6,11 @@
 	<title>前端精致技能库</title>
 	<link rel="shortcut icon" href="image/icons/favicon.ico" type="image/x-icon"/>
 	<link type="text/css" rel="stylesheet" href="css/dom.css"/>
-	<link type="text/css" rel="stylesheet" href="css/index.css"/>
+	<link type="text/css" rel="stylesheet" id="indexcss"/>
+	<link type="text/css" rel="stylesheet" id="arrowcss"/>
 	<link type="text/css" rel="stylesheet" href="css/demorender.css"/>
 	<link type="text/css" rel="stylesheet" href="css/sdMasker.css"/>
 	<link type="text/css" rel="stylesheet" href="css/sdMenuTree.css"/>
-	<link type="text/css" rel="stylesheet" href="css/arrow.css"/>
 	<link type="text/css" rel="stylesheet" href="font/sdfont.css"/>
 	<link type="text/css" rel="stylesheet" href="javascript/components/google-code-prettify/prettify.css" type="text/css">
 	<link type="text/css"  rel="stylesheet" href="css/sd-button-pc.css"/>
@@ -28,7 +28,7 @@
 	<script type="text/javascript" src="javascript/business/search.js"></script>
 	<script type="text/javascript" src="javascript/index.js"></script>
 </head>
-<body onload="init()">
+<body onload="init()" style="display:none;">
 	<div id="menuDiv" class="menuDivShow">
 		<div id="headDiv">
 			<div id="logo"></div>
@@ -50,7 +50,7 @@
 		</div>
 	</div>
 	<div id="menuToggleDiv" class="hideMenuIcon" onclick="toggleMenu();" >
-		<div class='arrow arrow-left'></div>
+		<div id="menuToggleArrowDiv"  class='arrow arrow-left'></div>
 	</div>
 	
 	<div style="display:none" id="open-search-dialog-button" class="open-search-dialog-button" onclick="openSearchDialog();">

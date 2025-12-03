@@ -84,14 +84,15 @@ function writeWarn(message){
 	${message}
 	</div>`;
 }
-/* 
 (async () => {
 	const mobile = await isMobile();
-	if(!mobile){
-		document.write(openOnThePc());
+	if(mobile){
+		document.documentElement.style.setProperty('--title-div-align', 'center');
+		document.documentElement.style.setProperty('--title-div-fontsize', '0.6rem');
+		document.documentElement.style.setProperty('--title-div-height', '0.6rem');
+		document.documentElement.style.setProperty('--content-line-height', '0.5rem');
 	}
 })();
- */
 
 /* 
  * 浏览器缩放，整页内容按比例也缩放
