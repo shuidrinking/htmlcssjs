@@ -147,23 +147,7 @@ html body{
 	opacity: 0.8;
 }
 .showMenuIcon{
-	display: block;
-	width: 0.1rem;
-	position: absolute;
-	top: calc(50% - 1rem);
 	left: 0;
-	z-index: 999;
-	cursor: pointer;
-	text-align: center;
-	height: 1rem;
-	line-height: 1.05rem;
-	border: 1px solid #878787;
-	border-top-right-radius: 0.1rem;
-	border-bottom-right-radius: 0.1rem;
-	background-position: center center;
-	background-size: auto;
-	transition: all 0.2s linear 0s;
-	opacity: 0.1;
 }
 .currentPositionDiv{
 	height: 0.2rem;
