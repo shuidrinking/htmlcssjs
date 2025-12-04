@@ -7,9 +7,13 @@
 	justify-content:center;
 	gap:0.1rem;
 	position:relative;
+	font-size:clamp(0.16rem, 2vw ,0.3rem);
+}
+div{
+	font-size:clamp(0.16rem, 2vw ,0.3rem);
 }
 .subelement{
-	width: 3rem;
+	width: 4rem;
 	height: 3rem;
 	display: flex;
 	justify-content: center;
@@ -27,8 +31,8 @@ circle {
 </style>
 <style>
 .circle {
-  width: 80px;
-  height: 80px;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
   mix-blend-mode: screen;
   position: absolute;
@@ -38,12 +42,12 @@ circle {
 }
 .circle-2 {
   background: lightgreen;
-  left: 40px;
+  left: 0.3rem;
 }
 .circle-3 {
   background: blue;
-  left: 20px;
-  top: 40px;
+  left: 0.2rem;
+  top: 0.3rem;
 }
 .isolate {
   isolation: isolate; /* Without isolation, the background color will be taken into account */
@@ -55,8 +59,7 @@ circle {
 }
 .sb {
 	position: absolute;
-	font-size: 30px;
-	line-height:30px;
+	line-height:0.3rem;
 	width: 100%;
 	height: 100%;
 	top: 40%;
@@ -88,20 +91,22 @@ circle {
 	<div class="subelement">
 		<svg  style="width:1.2rem;height:1.2rem">
 			<g class="isolate">
-				<circle cx="40" cy="40" r="40" fill="red" />
-				<circle cx="80" cy="40" r="40" fill="lightgreen" />
-				<circle cx="60" cy="80" r="40" fill="blue" />
+				<circle cx="0.3rem" cy="0.3rem" r="0.3rem" fill="red"></circle>
+				<circle cx="0.6rem" cy="0.3rem" r="0.3rem" fill="lightgreen"></circle>
+				<circle cx="0.45rem" cy="0.6rem" r="0.3rem" fill="blue"></circle>
 			</g>
 		</svg>
 		<div>
 			对SVG同样有效
 		</div>
 	</div>
+</div>
+<div class="containner">
 	<div class="subelement isolate" style="width:4rem;height:3rem;background-image:url(image/business/sample3.jpg);background-repeat:no-repeat;background-size: 100%;">
-		<div style="color:#ffffff;line-height:1;mix-blend-mode: difference;font-size:30px;width:100%;text-align:center;">
+		<div style="color:#ffffff;line-height:1;mix-blend-mode: difference;font-size:0.3rem;width:100%;text-align:center;">
 			difference跟背景颜色反相
 		</div>
-		<div style="line-height:1;background-color:#ffffff;font-weight:bold;mix-blend-mode: screen;font-size:30px;width:100%;text-align:center;">
+		<div style="line-height:1;background-color:#ffffff;font-weight:bold;mix-blend-mode: screen;font-size:0.3rem;width:100%;text-align:center;">
 			镂空文字mix-blend-mode: screen
 		</div>
 	</div>

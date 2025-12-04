@@ -274,7 +274,7 @@ summary::after {
 .top-menu{
 	user-select: none;
 	border-radius:0.04rem;
-	width:1rem;
+	width:2rem;
 	padding:0.1rem;
 }
 .top-menu:hover{
@@ -284,7 +284,7 @@ summary::after {
 	user-select: none;
 	position: absolute;
 	background-color: #ffffff;
-	min-width: 1rem;
+	min-width: 2rem;
 	padding: 5px 0;
 	z-index: 1;
 }

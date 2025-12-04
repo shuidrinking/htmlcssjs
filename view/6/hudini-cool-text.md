@@ -12,7 +12,7 @@ svg[height="0"] {
 .cool-text{
 	height:2rem;
 	line-height:2rem;
-	font-size:1rem;
+	font-size:clamp(0.2rem, calc(0.2rem + 3vw), 1rem);;
 	font-weight:1000;
 	/* no pseudo needed */
 	--k: 0;

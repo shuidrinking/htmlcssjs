@@ -56,11 +56,13 @@
 	}
 </style>
 
-<div class="action-item-box" >
-	<div id="action-item-action-render" class="action-item-action-render" onclick="console.info('点击后的响应事件')">
-		<div class="action-item-action-title">功能提示词</div>
+<div class="demobox">
+	<div class="action-item-box" >
+		<div id="action-item-action-render" class="action-item-action-render" onclick="console.info('点击后的响应事件')">
+			<div class="action-item-action-title">功能提示词</div>
+		</div>
+		<div class="action-item-action-remark">要求或规范说明</div>
 	</div>
-	<div class="action-item-action-remark">要求或规范说明</div>
 </div>
 
 >1、css代码

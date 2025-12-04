@@ -176,7 +176,7 @@ function toggleMenu(){
 		$("menuToggleArrowDiv").classList.remove("arrow-left");
 	}
 	else{
-		$("menuToggleDiv").style.left="calc(50% - 1.2rem)";
+		$("menuToggleDiv").style.left="calc(80% - 1.2rem)";
 		_arrow.classList.remove("arrow-right");
 		_arrow.classList.add("arrow-left");
 		$("menuDiv").classList.remove("menuDivHidden");

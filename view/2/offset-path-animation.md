@@ -2,8 +2,8 @@
 
 <style>
 	.element{
-		width: 40px;
-		height: 40px;
+		width: 0.4rem;
+		height: 0.4rem;
 		clip-path: polygon(0 0, 100% 50%, 0 100%);
 		background: linear-gradient(#fc0, #f0c);
 		offset-path: url("#motionPath");/* path('M 10 80 C 80 10, 130 10, 190 80 S 300 150, 360 80'); */
@@ -21,19 +21,6 @@
 	}
 </style>
 
-<div class="demobox">
-	<div style="width:600px;height:400px;">
-		<div class="element">
-		</div>
-		<svg xmlns="http://www.w3.org/2000/svg" style="width:600px;height:400px;">
-			<path id="motionPath" d="M 104,1 205,60 205,180 104,237 3,180 3,60 Z" fill="transparent" stroke="black" stroke-dasharray="3" stroke-width="3"></path>
-		</svg>
-	</div>
-	<div class="map">
-		<div class="car"></div>
-	</div>
-</div>
-
 ```
 offset-前缀的css属性起初是motion-前缀，本意就是定义运动的，后期修改为offset-前缀。
 offset-path是CSS中的一个属性，值可以ray()、polygon()、path()、url()等可以绘制路径的函数，用于指定运动路径。
@@ -41,9 +28,23 @@ offset-path是CSS中的一个属性，值可以ray()、polygon()、path()、url(
 使用animation，在关键帧设置offset-distance等属性，即可实现沿指定路径运动。
 ```
 
+
+<div class="demobox">
+	<div>
+		<div class="element">
+		</div>
+		<svg xmlns="http://www.w3.org/2000/svg" style="width:2rem;height:2rem;">
+			<path id="motionPath" d="M 50 1 L 80 80 L 120 100 L 50 180 L 3 60 Z" fill="transparent" stroke="black" stroke-dasharray="3" stroke-width="3"></path>
+		</svg>
+	</div>
+</div>
+
 > html代码
 <pre class="prettyprint lang-html">
 &lt;div class="element"&gt;&lt;/div&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" style="width:2rem;height:2rem;"&gt;
+	&lt;path id="motionPath" d="M 50 1 L 80 80 L 120 100 L 50 180 L 3 60 Z" fill="transparent" stroke="black" stroke-dasharray="3" stroke-width="3"&gt;&lt;/path&gt;
+&lt;/svg&gt;
 </pre>
 
 > css代码
@@ -67,6 +68,12 @@ offset-path是CSS中的一个属性，值可以ray()、polygon()、path()、url(
 	}
 }
 </pre>
+
+<div class="demobox">
+	<div class="map">
+		<div class="car"></div>
+	</div>
+</div>
 
 <style type="text/css">
 .map{

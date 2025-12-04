@@ -83,7 +83,7 @@ body{
 	/* background: linear-gradient(90deg, #f1faff, #cee8f8 50%); *//* 标准的语法 90度表示从左到右*/
 	z-index:998;
 	background:#ffffff;
-	width:50%;
+	width:80%;
 }
 .menuDivHidden{
 	border:0;
@@ -141,7 +141,7 @@ body{
 	opacity: 1;
 }
 .showMenuIcon{
-	left: 50%;
+	left: 80%;
 }
 .currentPositionDiv{
 	height: 0.2rem;

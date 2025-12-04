@@ -91,6 +91,11 @@ function writeWarn(message){
 		document.documentElement.style.setProperty('--title-div-fontsize', '0.6rem');
 		document.documentElement.style.setProperty('--title-div-height', '0.6rem');
 		document.documentElement.style.setProperty('--content-line-height', '0.5rem');
+		document.documentElement.style.setProperty('--menu-tree-fontsize', '0.3rem');
+		document.documentElement.style.setProperty('--menu-tree-lineheight', '0.3rem');
+		document.documentElement.style.setProperty('--menuitem-arrow-width', '0.1rem');
+		document.documentElement.style.setProperty('--menuitem-arrow-active-width', '0.12rem');
+		document.documentElement.style.setProperty('--menurow-node-height', '0.5rem');
 	}
 })();
 

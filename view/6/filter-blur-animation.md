@@ -8,19 +8,19 @@
 		filter: contrast(30);
 	}
 	.text {
-		font-size: 100px;
+		font-size:clamp(0.4rem, calc(0.4rem + 3vw), 1rem);
 		color: #000000;
 		animation: showup 5s forwards;
 	}
 	@keyframes showup {
 		from {
-			letter-spacing: -50px;
-			filter: blur(10px);
+			letter-spacing: -0.5rem;
+			filter: blur(0.1rem);
 		}
 
 		to {
-			letter-spacing: 10px;
-			filter: blur(2px);
+			letter-spacing: 0.1rem;
+			filter: blur(0.02rem);
 		}
 	}
 </style>
@@ -38,7 +38,7 @@
 		filter: contrast(30);
 	}
 	.text {
-		font-size: 100px;
+		font-size:clamp(0.4rem, 2vw , 1rem);
 		color: #000000;
 		animation: showup 5s forwards;
 	}

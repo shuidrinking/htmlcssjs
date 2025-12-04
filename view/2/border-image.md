@@ -4,7 +4,7 @@
 .border-image-demo1{
 	color:#ffffff;text-align: center;
 	width:3rem;height:1.5rem;padding:0.1rem;
-	border:20px solid;
+	border:0.2rem solid;
 	/* 简写 border-image:url(./border.svg) 50 round;*/
 	border-image-source:url(image/business/colored-border.svg);
 	border-image-slice: 50;
@@ -18,9 +18,10 @@
 	border-image-width: 20px 20px;
 }
 .border-image-demo3{
-	border:20px solid;
+	border:0.2rem solid;
 	border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
 	width:3rem;height:1.5rem;background:#fff3d4;text-align:left;padding:0.1rem;
+	font-size:clamp(0.1rem, calc(0.1rem + 2vw), 0.14rem);
 }
 </style>
 <div class="demobox">
