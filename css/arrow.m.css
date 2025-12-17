@@ -37,9 +37,11 @@
 	border-top-color: #878787;
 	margin-bottom: -0.05rem;
 }
-.arrow-right{
+.arrow-to-right{
+	left:0;/*此时icon在最左侧，箭头向右*/
 }
-.arrow-left{
+.arrow-to-left{
+	left:80%;/*此时icon在最右侧，箭头向右左*/
 }
 @property --k {
 	syntax: "<number>";

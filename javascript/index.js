@@ -11,9 +11,9 @@ async function init(){
 		_arrowLink.href="css/arrow.m.css";
 		document.querySelector("#workAreaDiv").classList.add("workAreaDivMax");
 		document.querySelector("#menuDiv").classList.add("menuDivHidden");
-		document.querySelector("#menuToggleDiv").style.left="0";
-		document.querySelector(".arrow").classList.remove("arrow-left");
-		document.querySelector(".arrow").classList.add("arrow-right");
+		document.querySelector(".arrow").classList.remove("arrow-to-left");//移动端默认菜单是隐藏的
+		document.querySelector(".arrow").classList.add("arrow-to-right");
+		document.querySelector("#menuToggleDiv").classList.add("menuHidden");
 	}
 	else{
 		_link.href="css/index.css";
@@ -162,23 +162,22 @@ var menuExpand=true;
  * @returns
  */
 function toggleMenu(){
+	let _toggleBar=document.querySelector("#menuToggleDiv");
 	let _arrow=document.querySelector("#menuToggleArrowDiv");
-	if(_arrow.classList.contains("arrow-left")){
-		_arrow.classList.remove("arrow-left");
-		_arrow.classList.add("arrow-right");
+	if(!_toggleBar.classList.contains("menuHidden")){
+		_arrow.classList.replace("arrow-to-left", "arrow-to-right");
 		$("menuDiv").classList.add("menuDivHidden");
 		if(!Client.context.isMobile){
 			$("workAreaDiv").classList.add("workAreaDivMax");
 		}
-		$("menuToggleDiv").classList.add("showMenuIcon");
+		_toggleBar.classList.add("menuHidden");
 	}
 	else{
-		_arrow.classList.remove("arrow-right");
-		_arrow.classList.add("arrow-left");
+		_arrow.classList.replace("arrow-to-right", "arrow-to-left");
 		$("menuDiv").classList.remove("menuDivHidden");
 		if(!Client.context.isMobile){
 			$("workAreaDiv").classList.remove("workAreaDivMax");
 		}
-		$("menuToggleDiv").classList.remove("showMenuIcon")
+		_toggleBar.classList.remove("menuHidden")
 	}
 }

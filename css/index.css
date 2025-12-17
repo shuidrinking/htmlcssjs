@@ -121,7 +121,7 @@ html body{
 	width: 100%;
 	height: 100%;
 }
-.hideMenuIcon{
+.menuDisplayed{
 	display: block;
 	width: 0.1rem;
 	position: absolute;
@@ -138,15 +138,15 @@ html body{
 	background-position: center center;
 	background-size: auto;
 	transition: all 0.2s linear 0s;
-	opacity: 0.1;
+	opacity: 0.3;
 }
-.hideMenuIcon:hover{
+.menuDisplayed:hover{
 	opacity: 0.8;
 }
-.showMenuIcon:hover{
+.menuHidden:hover{
 	opacity: 0.8;
 }
-.showMenuIcon{
+.menuHidden{
 	left: 0;
 }
 .currentPositionDiv{
