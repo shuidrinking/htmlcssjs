@@ -1,10 +1,9 @@
-#### 利用DOMParser类的parseFromString函数将字符串解析为dom元素或者节点
+#### 套路一：利用DOMParser类的parseFromString函数将字符串解析为dom元素或者节点
 
->1、语法
 <pre class="prettyprint lang-javascript">
 //函数原型
 parseFromString(input, mimeType)
-//nput可以为html、xml或svg的内容
+//input可以为html、xml或svg的内容
 //mimeType的可取值：text/html、text/xml、application/xml、application/xhtml+xml、image/svg+xml
 //input为html字符串时，函数将返回一个完整的html文档，目标元素位于body中，使用时你需要从body中提取出来
 //样例：
@@ -46,11 +45,31 @@ function laodFromHtmlString(_parentElement, htmlString=""){
 //特别注意
 如果html字符串的最前位置是style、script标签，则parseFromString返回的结果中会自动将它们置于head中，如果混在中间，则会被置于body中。
 </pre>
->2、效果等同于设置innerHTML或调用document.write
-<pre class="prettyprint lang-javascript">
 
-</pre>
->3、与createElement相比
+#### 套路二：利用innerHTML将html字符串设置到目标元素内，并激活其中的javascript
+
 <pre class="prettyprint lang-javascript">
-createElement只能创建一个指定的元素
+function laodFromHtmlString(_parentElement, htmlString=""){
+	_parentElement.innerHTML = htmlString;
+	//需要重置脚本，通过innerHTML设置的脚本不会被激活
+	let _scriptList = _containner.querySelectorAll("script");
+	if(_scriptList && _scriptList.length>0){
+		//提取脚本
+		let scriptDefList=[];
+		_scriptList.forEach(_script =>{
+			scriptDefList.push({"text":_script.text, "type":_script.type, "onload":_script.onload, "onerror":_script.onerror, "src":_script.src});
+			_script.parentNode.removeChild(_script);
+		});
+		//激活
+		scriptDefList.forEach(scriptDef=>{
+			let _script=document.createElement("script");
+			_script.type="text/javascript";
+			if(scriptDef.text){_script.text=scriptDef.text;}
+			if(scriptDef.src){_script.src=scriptDef.src;}
+			if(scriptDef.type){_script.type=scriptDef.type;}
+			if(scriptDef.onload){_script.onload=scriptDef.onload;}
+			_parentElement.appendChild(_script);
+		});
+	}
+}
 </pre>
