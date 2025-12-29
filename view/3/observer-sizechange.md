@@ -17,8 +17,6 @@
 <script>
 setTimeout(function() {
 	if(window.ResizeObserver) {
-		const h1Elem = document.querySelector('h1');
-		const pElem = document.querySelector('p');
 		const divElem = document.querySelector('#textContent');
 		const slider = document.querySelector('input[type="range"]');
 
@@ -62,8 +60,50 @@ setTimeout(function() {
 <div class="demobox">
 	<div id="textContent">
 		<h1>So what happened?</h1>
-		<p>And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it! Ow, my spirit! I don't want to be rescued. You guys aren't Santa! You're not even robots. I've got to find a way to escape the horrible ravages of youth. Suddenly, I'm going to the bathroom like clockwork, every three hours. And those jerks at Social Security stopped sending me checks. Now 'I' have to pay 'them'!</p>
+		<p>（1）为拖动比例条添加input动作的监听器，拖动时改变这个文本显示框的宽度；<br>（2）定义一个“尺寸监听器”负责监听“文本显示框”的大小，当其尺寸变化发生时，监听器回调函数中会改变“文本显示框”内的字体大小</p>
 	</div>
+</div>
+<div class="demobox">
+	<details style="width:5rem;">
+		<summary>
+			本例代码
+		</summary>
+		<pre class="prettyprint lang-javascript">
+if(window.ResizeObserver) {
+	//显示文字的div
+	const divElem = document.querySelector('#textContent');
+	divElem.style.width = '600px';
+	
+	//拖拽条，为其添加input监听：拖动时改变“显示文字的div”的宽度
+	const slider = document.querySelector('input[type="range"]');
+	slider.addEventListener('input', () => {
+		divElem.style.width = slider.value + 'px';
+	})
+
+	//定义监听器，回调函数实现：“显示文字的div”的大小变动时，设置其内部文字的大小，即：字体跟随容器宽度而变化
+	const resizeObserver = new ResizeObserver(entries => {
+		for (let entry of entries) {
+			if(entry.contentBoxSize) {
+				if (entry.contentBoxSize[0]) {
+					divElem.style.fontSize = (entry.contentBoxSize[0].inlineSize/600)*16 + 'px';
+				}
+				else {
+					divElem.style.fontSize = (entry.contentBoxSize.inlineSize/600)*16 + 'px';
+				}
+			}
+			else {
+				divElem.style.fontSize = (entry.contentRect.width/600)*16 + 'px';
+			}
+		}
+	});
+	//监听“显示文字的div”的大小变动
+	resizeObserver.observe(divElem);
+}
+else {
+	console.log('Resize observer not supported!');
+}
+		</pre>
+	</details>
 </div>
 
 
