@@ -60,6 +60,10 @@ async function loadView(menuCode, _element){
 		window.open(url);
 		return;
 	}
+	let showfilename=document.querySelector(".resourcefile");
+	if(showfilename){
+		showfilename.textContent=url;
+	}
 	/* var currentMenu=menuMap[menuCode];
 	var positionHTMLString=currentMenu.showText;
 	while(true){

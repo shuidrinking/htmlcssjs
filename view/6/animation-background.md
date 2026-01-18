@@ -38,7 +38,7 @@
 }
 
 .animation-background {
-	with:100%;
+	width:100%;
 	height:300px;
 	background-image: 
 		radial-gradient(
@@ -76,6 +76,7 @@
 		--perE: 70%;
 		--angle: 360deg;
 	}
+}
 </style>
 <div class="animation-background"></div>
 
@@ -123,7 +124,7 @@
 }
 
 .animation-background {
-	with:100%;
+	width:100%;
 	height:300px;
 	background-image: 
 		radial-gradient(
@@ -161,4 +162,5 @@
 		--perE: 70%;
 		--angle: 360deg;
 	}
+}
 </pre>

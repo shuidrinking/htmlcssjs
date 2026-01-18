@@ -218,3 +218,12 @@ html body{
 		--k: 1;
 	}
 }
+
+.resourcefile{
+	position: fixed;
+	right:0;
+	bottom: 0;
+	opacity: 0.5;
+	padding:0.1rem;
+	font-size: 0.12rem;
+}
