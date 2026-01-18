@@ -84,7 +84,7 @@ var menuList = [
 	{"menuCode":"mworks003","parentMenuCode":"mworks","showText":"3、文字交融展开效果","url":"view/6/filter-blur-animation.md"},
 	{"menuCode":"mworks004","parentMenuCode":"mworks","showText":"4、hudini api实现鼠标划过扇子张开","url":"view/6/hudini-fanshaped-animation.md"},
 	{"menuCode":"mworks005","parentMenuCode":"mworks","showText":"5、渐变文字或图片喷涂文字","url":"view/6/background-clip-text.md"},
-	{"menuCode":"mworks006","parentMenuCode":"mworks","showText":"6、鼠标滑出即消失的弹出框","url":"view/6/notdisplay-on-moveout.html"},
+	{"menuCode":"mworks006","parentMenuCode":"mworks","showText":"6、鼠标滑出即消失的弹出框","url":"view/6/notdisplay-on-moveout.md"},
 	{"menuCode":"mworks007","parentMenuCode":"mworks","showText":"7、动画api做的点哪飞哪","url":"view/6/cool-animation.html"},
 	{"menuCode":"mworks008","parentMenuCode":"mworks","showText":"8、高亮标记被选中的文字","url":"view/6/highlight-selected.md"},
 	{"menuCode":"mworks009","parentMenuCode":"mworks","showText":"9、蜂巢展示","url":"view/6/honeycomb-rows.html"},
