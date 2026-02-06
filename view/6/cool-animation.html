@@ -1,4 +1,30 @@
-<div id="playground" style="width:100%;height:100%">
+<pre class="prettyprint lang-javascript">
+	//核心代码：
+	_ball.getAnimations().forEach((animation)=>{
+		//清理上次添加的动画
+		animation.cancel();
+	});
+	//添加新动画
+	_ball.animate(
+		[
+			{
+				transform:`translate(${startX}px, ${startY}px) rotate(${deg}deg) `,
+				offset: 0
+			},
+			//此处省去其他offset设置
+			{
+				transform:`translate(${x}px, ${y}px) rotate(${deg}deg) `,
+				offset:1
+			}
+		], 
+		{
+			duration: 500,
+			fill:"forwards"
+		}
+	);
+</pre>
+
+<div id="playground" style="width:100%;height:60%">
 	<div class="ball" data-init="0"></div>
 </div>
 <style>
