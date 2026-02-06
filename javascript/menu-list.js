@@ -3,6 +3,7 @@ var menuList = [
 	{"menuCode":"mhtml001","parentMenuCode":"mhtml","showText":"1、概要标题标签，点击后展开概要信息","url":"view/1/summary.md"},
 	{"menuCode":"mhtml002","parentMenuCode":"mhtml","showText":"2、ruby用于添加拼音等标注","url":"view/1/ruby.md"},
 	{"menuCode":"mhtml003","parentMenuCode":"mhtml","showText":"3、dialog标签","url":"view/1/dialog-with-backdrop.md"},
+	{"menuCode":"mhtml004","parentMenuCode":"mhtml","showText":"4、利用DocumentFragment减少重回和回流","url":"view/1/DocumentFragment.md"},
 	
 	{"menuCode":"mcss","parentMenuCode":"0","showText":"二、css"},
 	{"menuCode":"mcss001","parentMenuCode":"mcss","showText":"1、盒模型","url":"view/2/box-sizing.md"},
@@ -27,7 +28,7 @@ var menuList = [
 	{"menuCode":"mcss020","parentMenuCode":"mcss","showText":"20、使元素沿指定路径运动","url":"view/2/offset-path-animation.md"},
 	{"menuCode":"mcss021","parentMenuCode":"mcss","showText":"21、“点击后toggle弹出框”的专用css属性","url":"view/2/popover-popovertarget.md"},
 	{"menuCode":"mcss022","parentMenuCode":"mcss","showText":"22、“设置元素的宽高比aspect-ratio","url":"view/2/aspect-ratio.md"},
-	
+
 	{"menuCode":"mjs","parentMenuCode":"0","showText":"三、javascript"},
 	{"menuCode":"mjs001","parentMenuCode":"mjs","showText":"1、获取文档渲染模型","url":"view/3/get-compatMode.md"},
 	{"menuCode":"mjs002","parentMenuCode":"mjs","showText":"2、将字符串解析为dom元素","url":"view/3/parse-string-to-dom.md"},
@@ -79,7 +80,7 @@ var menuList = [
 	{"menuCode":"mfont","parentMenuCode":"0","showText":"五、字体"},
 	
 	{"menuCode":"mworks","parentMenuCode":"0","showText":"六、高频复用组件或特效"},
-	{"menuCode":"mworks001","parentMenuCode":"mworks","showText":"1、从中心向四周舒展","url":"view/6/stretch-from-center.md"},
+	{"menuCode":"mworks001","parentMenuCode":"mworks","showText":"1、onhover舒展式强调动画","url":"view/6/stretch-from-center.md"},
 	{"menuCode":"mworks002","parentMenuCode":"mworks","showText":"2、倒计时、随机数","url":"view/6/countdown-random.html"},
 	{"menuCode":"mworks003","parentMenuCode":"mworks","showText":"3、文字交融展开效果","url":"view/6/filter-blur-animation.md"},
 	{"menuCode":"mworks004","parentMenuCode":"mworks","showText":"4、hudini api实现鼠标划过扇子张开","url":"view/6/hudini-fanshaped-animation.md"},
@@ -102,4 +103,5 @@ var menuList = [
 	{"menuCode":"mworks021","parentMenuCode":"mworks","showText":"21、拖拽排序","url":"view/6/drag-to-order.md"},
 	{"menuCode":"mworks022","parentMenuCode":"mworks","showText":"22、MVVM双向绑定同步组件","url":"view/6/model-view-binding.md"},
 	{"menuCode":"mworks023","parentMenuCode":"mworks","showText":"23、高亮显示代码块组件highlightjs","url":"view/6/highlightjs.md"},
+	{"menuCode":"mworks024","parentMenuCode":"mworks","showText":"24、在javascript中动态设置样式","url":"view/6/js-set-style.md"},
 ];
